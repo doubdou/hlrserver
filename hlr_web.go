@@ -268,17 +268,18 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 
 	domainStr := domainArr[0]
 	userStr := userArr[0]
-
-	// Error.Println(r.RequestURI, r.Method)
-	// w.Write(buf)
-	//res := authInfoMarshal("ai-ym.com", "dev", "3000051001", "1001")
-
-	thisDomain := hlrDataManage[domainStr]
+	defer hlrDataManage.RUnlock()
+	hlrDataManage.RLock()
+	thisDomain := hlrDataManage.mapping[domainStr]
+	if thisDomain == nil {
+		fmt.Fprintf(w, errorMessage(codeDomainNotFound))
+		return
+	}
 	Debug.Println("-----debug--------->", userStr, domainStr, thisDomain)
 	thisDomain.RLock()
 	thisUser := thisDomain.mapping[userStr]
 	thisUser.Lock()
-	res := authInfoMarshal(thisDomain.Name, thisDomain.id, thisUser.Username, thisUser.Password)
+	res := authInfoMarshal(thisDomain.Name, thisUser.GroupID, thisUser.Username, thisUser.Password)
 	thisUser.Unlock()
 	thisDomain.RUnlock()
 	fmt.Println(res)

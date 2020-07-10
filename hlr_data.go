@@ -7,12 +7,18 @@ import (
 )
 
 //DomainsManage HLR全局数据管理，从数据库读取保存在内存中
-var hlrDataManage = make(map[string]*DomainManage)
+var hlrDataManage = struct {
+	*sync.RWMutex
+	mapping map[string]*DomainManage
+}{
+	RWMutex: new(sync.RWMutex),
+	mapping: make(map[string]*DomainManage),
+}
 
 //加载特定域下的所有信息，域信息、所属域的所有用户信息
 func loadDomainsFromDB(domain *DomainManage, domainID int) error {
-	defer domain.Unlock()
-	domain.Lock()
+	// defer domain.Unlock()
+	// domain.Lock()
 	c, err := GetDBConnector()
 	if err != nil || c == nil {
 		return errors.New("get database connector failed")
@@ -45,6 +51,8 @@ func loadDomainsFromDB(domain *DomainManage, domainID int) error {
 
 //LoadAllDataFromDB 从数据库加载所有数据，包括域、组、用户
 func LoadAllDataFromDB() error {
+	defer hlrDataManage.Unlock()
+	hlrDataManage.Lock()
 	c, err := GetDBConnector()
 	if err != nil || c == nil {
 		return errors.New("get DB connector failed")
@@ -65,7 +73,7 @@ func LoadAllDataFromDB() error {
 		thisDomain.RWMutex = new(sync.RWMutex)
 		thisDomain.DomainInfo = p
 		thisDomain.mapping = make(map[string]*UserCompleteInfo)
-		hlrDataManage[p.Name] = thisDomain
+		hlrDataManage.mapping[p.Name] = thisDomain
 		loadDomainsFromDB(thisDomain, p.id)
 	}
 	return nil
