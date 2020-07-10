@@ -1,0 +1,102 @@
+2020/07/08 16:52:59 hlr_db.go:114: [ERROR] execSQL stmt.exec  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 16:52:59 hlr_db.go:114: [ERROR] execSQL stmt.exec  pq: 关系 "hlr_group" 已经存在
+2020/07/08 16:52:59 hlr_db.go:114: [ERROR] execSQL stmt.exec  pq: 关系 "hlr_user" 已经存在
+2020/07/08 16:57:44 hlr_db.go:114: [ERROR] execSQL stmt.exec  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 16:57:44 hlr_db.go:114: [ERROR] execSQL stmt.exec  pq: 关系 "hlr_group" 已经存在
+2020/07/08 16:57:44 hlr_db.go:114: [ERROR] execSQL stmt.exec  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:02:17 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:02:17 hlr_db.go:114: [ERROR] execSQL stmt.exec  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:02:17 hlr_db.go:140: [ERROR] createDomainSQL fail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:02:17 hlr_db.go:114: [ERROR] execSQL stmt.exec  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:02:17 hlr_db.go:144: [ERROR] createGroupSQL fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:02:17 hlr_db.go:114: [ERROR] execSQL stmt.exec  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:02:17 hlr_db.go:148: [ERROR] createUserSQL fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:02:17 hlr_web.go:395: [ERROR] func main gid:  1
+2020/07/08 17:04:03 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:04:03 hlr_db.go:140: [ERROR] CREATE TABLE hlr_domain (
+	id serial PRIMARY KEY NOT NULL,
+	name varchar(128) NOT NULL,
+	tenant_id int NOT NULL,
+	company text,
+	enable boolean NOT NULL,
+	update timestamp(6) DEFAULT now()
+ 	); exec fail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:04:03 hlr_db.go:144: [ERROR] CREATE TABLE hlr_group (
+	id serial PRIMARY KEY NOT NULL,
+	name varchar(64) NOT NULL,
+	group_desc text,
+	parent_id int NULL,
+	domain_id int NOT NULL,
+	update timestamp(6) DEFAULT now()
+	); exec fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:04:03 hlr_db.go:148: [ERROR] CREATE TABLE hlr_user (
+	id serial PRIMARY KEY NOT NULL,
+	username varchar(64) NOT NULL,
+	password varchar(64) NOT NULL,
+	group_id int NOT NULL,
+	update timestamp(6) DEFAULT now()
+	); createUserSQL fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:04:03 hlr_web.go:395: [ERROR] func main gid:  1
+2020/07/08 17:05:29 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:05:29 hlr_db.go:140: [ERROR] create domain fail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:05:29 hlr_db.go:144: [ERROR] create group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:05:29 hlr_db.go:148: [ERROR] create user table fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:05:29 hlr_web.go:395: [ERROR] func main gid:  1
+2020/07/08 17:06:22 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:06:22 hlr_db.go:140: [ERROR] create hlr_domain tablefail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:06:22 hlr_db.go:144: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:06:22 hlr_db.go:148: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:06:22 hlr_web.go:395: [ERROR] func main gid:  1
+2020/07/08 17:09:58 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:09:58 hlr_db.go:140: [ERROR] create hlr_domain tablefail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:09:58 hlr_db.go:144: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:09:58 hlr_db.go:148: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:09:58 hlr_web.go:395: [ERROR] func main gid:  1
+2020/07/08 17:10:26 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:10:26 hlr_db.go:140: [ERROR] create hlr_domain tablefail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:10:26 hlr_db.go:144: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:10:26 hlr_db.go:148: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:10:26 hlr_web.go:395: [ERROR] func main gid:  1
+2020/07/08 17:13:42 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:13:42 hlr_db.go:140: [ERROR] create hlr_domain fail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:13:42 hlr_db.go:144: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:13:42 hlr_db.go:148: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:13:42 hlr_web.go:395: [ERROR] func main gid:  1
+2020/07/08 17:17:06 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:17:06 hlr_db.go:140: [ERROR] create hlr_domain fail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:17:06 hlr_db.go:144: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:17:06 hlr_db.go:148: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:17:06 hlr_web.go:395: [ERROR] func main gid:  1
+2020/07/08 17:18:13 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:18:14 hlr_db.go:140: [ERROR] create hlr_domain fail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:18:14 hlr_db.go:144: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:18:14 hlr_db.go:148: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:18:14 hlr_web.go:395: [INFO] http serve gid:  1
+2020/07/08 17:20:30 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:20:30 hlr_db.go:140: [ERROR] create hlr_domain fail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:20:30 hlr_db.go:144: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:20:30 hlr_db.go:148: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:20:30 hlr_web.go:395: [INFO] http serve gid:  1
+2020/07/08 17:21:16 hlr_db.go:93: [INFO] Successfully connected database!
+2020/07/08 17:21:16 hlr_db.go:140: [ERROR] create hlr_domain fail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:21:16 hlr_db.go:144: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:21:16 hlr_db.go:148: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:21:16 hlr_web.go:395: [INFO] http serve gid:  1
+2020/07/08 17:22:52 hlr_db.go:85: [ERROR] OpenDBConnector--> postgres://postgres:postgres@192.168.71.137:5432/postgres?sslmode=disable&dbname=hlr
+2020/07/08 17:22:52 hlr_db.go:94: [INFO] Successfully connected database!
+2020/07/08 17:22:52 hlr_db.go:141: [ERROR] create hlr_domain fail  pq: 关系 "hlr_domain" 已经存在
+2020/07/08 17:22:52 hlr_db.go:145: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:22:52 hlr_db.go:149: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:22:52 hlr_web.go:395: [INFO] http serve gid:  1
+2020/07/08 17:25:05 hlr_web.go:188: [ERROR] /v1/voip/hlr/domain POST {"username":"30003", "password":"123qwe","group_id":1,"display_name":"agent_jzw"}
+2020/07/08 17:35:49 hlr_db.go:85: [ERROR] OpenDBConnector--> postgres://postgres:postgres@192.168.71.137:5432/postgres?sslmode=disable&dbname=hlr
+2020/07/08 17:35:49 hlr_db.go:94: [INFO] Successfully connected database!
+2020/07/08 17:35:49 hlr_web.go:395: [INFO] http serve gid:  1
+2020/07/08 17:46:46 hlr_db.go:85: [ERROR] OpenDBConnector--> host=192.168.71.137 port=5432 user=postgres password=postgres dbname=hlr sslmode=disable
+2020/07/08 17:46:46 hlr_db.go:94: [INFO] Successfully connected database!
+2020/07/08 17:46:46 hlr_web.go:395: [INFO] http serve gid:  1
+2020/07/08 17:50:47 hlr_db.go:85: [ERROR] OpenDBConnector--> host=192.168.71.137 port=5432 user=postgres password=postgres dbname=hlr sslmode=disable
+2020/07/08 17:50:47 hlr_db.go:94: [INFO] Successfully connected database!
+2020/07/08 17:50:47 hlr_db.go:145: [ERROR] create hlr_group fail  pq: 关系 "hlr_group" 已经存在
+2020/07/08 17:50:47 hlr_db.go:149: [ERROR] create hlr_user fail  pq: 关系 "hlr_user" 已经存在
+2020/07/08 17:50:47 hlr_web.go:395: [INFO] http serve gid:  1
