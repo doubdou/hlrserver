@@ -78,3 +78,87 @@ func LoadAllDataFromDB() error {
 	}
 	return nil
 }
+
+//注册状态变更
+func userStatusSet(username string, realm string, status userstatusType) {
+	//查询域信息
+	hlrDataManage.RLock()
+	domain := hlrDataManage.mapping[realm]
+	if domain == nil {
+		hlrDataManage.RUnlock()
+		return
+	}
+	domain.RLock()
+	hlrDataManage.RUnlock()
+	//查询用户信息
+	u := domain.mapping[username]
+	if u == nil {
+		domain.RUnlock()
+		return
+	}
+	u.Lock()
+	if u.Status != status {
+		Info.Printf("%s Status: from %s change to %s", username, u.Status, status)
+		u.Status = status
+	} else {
+		Warning.Printf("%s Status is alreay %s", username, u.Status)
+	}
+	u.Unlock()
+	domain.RUnlock()
+}
+
+//坐席状态变更
+func userStateSet(username string, realm string, state agentStateType) {
+	//查询域信息
+	hlrDataManage.RLock()
+	domain := hlrDataManage.mapping[realm]
+	if domain == nil {
+		hlrDataManage.RUnlock()
+		return
+	}
+	domain.RLock()
+	hlrDataManage.RUnlock()
+	//查询用户信息
+	u := domain.mapping[username]
+	if u == nil {
+		domain.RUnlock()
+		return
+	}
+	u.Lock()
+	if u.State != state {
+		Info.Printf("%s state: from %s change to %s", username, u.Status, state)
+		u.State = state
+	} else {
+		Warning.Printf("%s state is alreay %s", username, u.State)
+	}
+	u.Unlock()
+	domain.RUnlock()
+}
+
+//通话状态设置
+func userTalkingSet(username string, realm string, talking bool) {
+	//查询域信息
+	hlrDataManage.RLock()
+	domain := hlrDataManage.mapping[realm]
+	if domain == nil {
+		hlrDataManage.RUnlock()
+		return
+	}
+	domain.RLock()
+	hlrDataManage.RUnlock()
+	//查询用户信息
+	u := domain.mapping[username]
+	if u == nil {
+		domain.RUnlock()
+		return
+	}
+	u.Lock()
+	if u.Talking != talking {
+		Info.Printf("%s talking from %t to %t", username, u.Talking, talking)
+		u.Talking = talking
+	} else {
+		Warning.Printf("%s talking is alreay %t", username, u.Talking)
+	}
+	u.Unlock()
+	domain.RUnlock()
+}

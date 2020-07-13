@@ -256,6 +256,15 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, errorMessage(codeBadRequest))
 		return
 	}
+
+	authtype := r.PostForm["action"]
+	if len(authtype) != 1 {
+		Error.Println("auth request refused because authtype not found")
+		w.WriteHeader(400)
+		fmt.Fprintf(w, errorMessage(codeBadRequest))
+		return
+	}
+
 	userArr := r.PostForm["user"]
 	domainArr := r.PostForm["domain"]
 	if len(userArr) != 1 || len(domainArr) != 1 {
@@ -271,7 +280,7 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	defer hlrDataManage.RUnlock()
 	thisDomain := hlrDataManage.mapping[domainStr]
 	if thisDomain == nil {
-		Error.Println("domain is not exists:", domainStr)
+		Error.Printf("auth request refused because domain[%s] not exists:", domainStr)
 		w.WriteHeader(400)
 		fmt.Fprintf(w, errorMessage(codeBadRequest))
 		return
@@ -280,7 +289,7 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	thisDomain.RLock()
 	thisUser := thisDomain.mapping[userStr]
 	if thisUser == nil {
-		Error.Println("user is not exists", userStr)
+		Error.Printf("auth request refused because user[%s] not exists:", userStr)
 		w.WriteHeader(400)
 		fmt.Fprintf(w, errorMessage(codeBadRequest))
 		thisDomain.RUnlock()
@@ -290,6 +299,7 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	res := authInfoMarshal(thisDomain.Name, thisUser.GroupID, thisUser.Username, thisUser.Password)
 	thisUser.Unlock()
 	thisDomain.RUnlock()
+	Debug.Printf("user [%s][%s] auth request accepted", thisUser.Username, thisUser.Password)
 	// Debug.Println(res)
 	w.Write([]byte(res))
 }

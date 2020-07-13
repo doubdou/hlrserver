@@ -8,21 +8,26 @@ import (
 )
 
 /******************************************************* 常量 ******************************************************************/
+type userstatusType string
+type agentStateType string
 
 //注册状态和坐席状态
 const (
 	//StatusLoggedOut 注册状态：未登录
-	StatusLoggedOut = "Logged Out"
+	StatusLoggedOut userstatusType = "Logged Out"
 	//StatusAvailable 注册状态：已登录
-	StatusAvailable = "Available"
+	StatusAvailable userstatusType = "Available"
+)
+
+const (
 	//StateIdle 坐席状态：休息/整理中
-	StateIdle = "Idle"
+	StateIdle agentStateType = "Idle"
 	//StateWaiting 坐席状态：休息/整理中
-	StateWaiting = "Waiting"
+	StateWaiting agentStateType = "Waiting"
 	//StateMakingCall 坐席状态：拨打中
-	StateMakingCall = "Making Call"
+	StateMakingCall agentStateType = "Making Call"
 	//StateInCall 坐席状态：正在通话
-	StateInCall = "In Call"
+	StateInCall agentStateType = "In Call"
 )
 
 /*********************************************** HLR服务各类数据的结构体 *********************************************************/
@@ -55,13 +60,13 @@ type UserInfo struct {
 
 //UserCompleteInfo 用户号码完整信息
 type UserCompleteInfo struct {
-	*sync.Mutex          //互斥锁
-	*UserInfo            //用户号码基本信息
-	Status        string // 注册状态
-	State         string // 坐席状态
-	Talking       bool   // 是否通话中
-	TalkedTime    int    //通话总时长,单位是秒，自注册成功开始算
-	AnsweredCalls int    // 接听通话数，自注册成功开始算
+	*sync.Mutex                  //互斥锁
+	*UserInfo                    //用户号码基本信息
+	Status        userstatusType // 注册状态
+	State         agentStateType // 坐席状态
+	Talking       bool           // 是否通话中
+	TalkedTime    int            //通话总时长,单位是秒，自注册成功开始算
+	AnsweredCalls int            // 接听通话数，自注册成功开始算
 }
 
 //DomainManage 管理域内的所有用户信息
