@@ -218,7 +218,7 @@ func authInfoMarshal(domain string, groupID int, username string, password strin
 </params>
 <variables>
 <variable name="toll_allow" value="domestic,international,local"/>
-<variable name="accountcode" value="%s"/>
+<variable name="accountcode" value="86"/>
 <variable name="user_context" value="default"/>
 <variable name="effective_caller_id_name" value="Extension %s"/>
 <variable name="effective_caller_id_number" value="%s"/>
@@ -244,7 +244,6 @@ func authInfoMarshal(domain string, groupID int, username string, password strin
 		username,
 		username,
 		username,
-		username,
 		groupID)
 }
 
@@ -252,7 +251,7 @@ func authInfoMarshal(domain string, groupID int, username string, password strin
 func numberAuth(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
-		Error.Println("number auth fail", err)
+		Error.Println("number auth, pase form fail", err)
 		w.WriteHeader(400)
 		fmt.Fprintf(w, errorMessage(codeBadRequest))
 		return
@@ -268,21 +267,30 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 
 	domainStr := domainArr[0]
 	userStr := userArr[0]
-	defer hlrDataManage.RUnlock()
 	hlrDataManage.RLock()
+	defer hlrDataManage.RUnlock()
 	thisDomain := hlrDataManage.mapping[domainStr]
 	if thisDomain == nil {
-		fmt.Fprintf(w, errorMessage(codeDomainNotFound))
+		Error.Println("domain is not exists:", domainStr)
+		w.WriteHeader(400)
+		fmt.Fprintf(w, errorMessage(codeBadRequest))
 		return
 	}
-	Debug.Println("-----debug--------->", userStr, domainStr, thisDomain)
+
 	thisDomain.RLock()
 	thisUser := thisDomain.mapping[userStr]
+	if thisUser == nil {
+		Error.Println("user is not exists", userStr)
+		w.WriteHeader(400)
+		fmt.Fprintf(w, errorMessage(codeBadRequest))
+		thisDomain.RUnlock()
+		return
+	}
 	thisUser.Lock()
 	res := authInfoMarshal(thisDomain.Name, thisUser.GroupID, thisUser.Username, thisUser.Password)
 	thisUser.Unlock()
 	thisDomain.RUnlock()
-	fmt.Println(res)
+	// Debug.Println(res)
 	w.Write([]byte(res))
 }
 

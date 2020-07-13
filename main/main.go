@@ -35,9 +35,12 @@ func main() {
 
 	hlr.LoadAllDataFromDB()
 
+	eslConf := hlr.EventsocketConfigGet()
+	eslAddr := fmt.Sprintf("%s:%s", eslConf.Host, eslConf.Port)
+	hlr.EventSocketStartup(eslAddr, eslConf.Password)
+
 	httpConf := hlr.HTTPConfigGet()
 	httpAddr := fmt.Sprintf("0.0.0.0:%s", httpConf.Port)
-
 	srv := hlr.NewWebServer()
 	srv.Serve(httpAddr)
 }
