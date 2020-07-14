@@ -1,4 +1,4 @@
-package hlr
+package ams
 
 import (
 	"errors"
@@ -6,8 +6,8 @@ import (
 	"sync"
 )
 
-//DomainsManage HLR全局数据管理，从数据库读取保存在内存中
-var hlrDataManage = struct {
+//DomainsManage ams全局数据管理，从数据库读取保存在内存中
+var amsDataManage = struct {
 	*sync.RWMutex
 	mapping map[string]*DomainManage
 }{
@@ -51,8 +51,8 @@ func loadDomainsFromDB(domain *DomainManage, domainID int) error {
 
 //LoadAllDataFromDB 从数据库加载所有数据，包括域、组、用户
 func LoadAllDataFromDB() error {
-	defer hlrDataManage.Unlock()
-	hlrDataManage.Lock()
+	defer amsDataManage.Unlock()
+	amsDataManage.Lock()
 	c, err := GetDBConnector()
 	if err != nil || c == nil {
 		return errors.New("get DB connector failed")
@@ -73,7 +73,7 @@ func LoadAllDataFromDB() error {
 		thisDomain.RWMutex = new(sync.RWMutex)
 		thisDomain.DomainInfo = p
 		thisDomain.mapping = make(map[string]*UserCompleteInfo)
-		hlrDataManage.mapping[p.Name] = thisDomain
+		amsDataManage.mapping[p.Name] = thisDomain
 		loadDomainsFromDB(thisDomain, p.id)
 	}
 	return nil
@@ -82,14 +82,14 @@ func LoadAllDataFromDB() error {
 //注册状态变更
 func userStatusSet(username string, realm string, status userstatusType) {
 	//查询域信息
-	hlrDataManage.RLock()
-	domain := hlrDataManage.mapping[realm]
+	amsDataManage.RLock()
+	domain := amsDataManage.mapping[realm]
 	if domain == nil {
-		hlrDataManage.RUnlock()
+		amsDataManage.RUnlock()
 		return
 	}
 	domain.RLock()
-	hlrDataManage.RUnlock()
+	amsDataManage.RUnlock()
 	//查询用户信息
 	u := domain.mapping[username]
 	if u == nil {
@@ -110,14 +110,14 @@ func userStatusSet(username string, realm string, status userstatusType) {
 //坐席状态变更
 func userStateSet(username string, realm string, state agentStateType) {
 	//查询域信息
-	hlrDataManage.RLock()
-	domain := hlrDataManage.mapping[realm]
+	amsDataManage.RLock()
+	domain := amsDataManage.mapping[realm]
 	if domain == nil {
-		hlrDataManage.RUnlock()
+		amsDataManage.RUnlock()
 		return
 	}
 	domain.RLock()
-	hlrDataManage.RUnlock()
+	amsDataManage.RUnlock()
 	//查询用户信息
 	u := domain.mapping[username]
 	if u == nil {
@@ -138,14 +138,14 @@ func userStateSet(username string, realm string, state agentStateType) {
 //通话状态设置
 func userTalkingSet(username string, realm string, talking bool) {
 	//查询域信息
-	hlrDataManage.RLock()
-	domain := hlrDataManage.mapping[realm]
+	amsDataManage.RLock()
+	domain := amsDataManage.mapping[realm]
 	if domain == nil {
-		hlrDataManage.RUnlock()
+		amsDataManage.RUnlock()
 		return
 	}
 	domain.RLock()
-	hlrDataManage.RUnlock()
+	amsDataManage.RUnlock()
 	//查询用户信息
 	u := domain.mapping[username]
 	if u == nil {

@@ -1,8 +1,8 @@
 package main
 
 import (
+	"ams"
 	"fmt"
-	"hlr"
 
 	_ "github.com/lib/pq"
 )
@@ -21,26 +21,26 @@ import (
 // 			c.修改坐席状态
 //
 // 		启动websocket Server，提供服务:
-// 			获取空闲坐席。注意，客户端向HLR发送建立连接请求，参数包含域（初期会让所有租户使用同一个域）、租户ID、组ID
+// 			获取空闲坐席。注意，客户端向ams发送建立连接请求，参数包含域（初期会让所有租户使用同一个域）、租户ID、组ID
 
 func main() {
-	hlr.LoadConfig()
+	ams.LoadConfig()
 
-	dbConf := hlr.DatabaseConfigGet()
-	_, err := hlr.OpenDBConnector(dbConf.Host, dbConf.Port, dbConf.User, dbConf.Password, dbConf.Name)
+	dbConf := ams.DatabaseConfigGet()
+	_, err := ams.OpenDBConnector(dbConf.Host, dbConf.Port, dbConf.User, dbConf.Password, dbConf.Name)
 	if err != nil {
-		hlr.Error.Println("db connect", err)
+		ams.Error.Println("db connect", err)
 		return
 	}
 
-	hlr.LoadAllDataFromDB()
+	ams.LoadAllDataFromDB()
 
-	eslConf := hlr.EventsocketConfigGet()
+	eslConf := ams.EventsocketConfigGet()
 	eslAddr := fmt.Sprintf("%s:%s", eslConf.Host, eslConf.Port)
-	hlr.EventSocketStartup(eslAddr, eslConf.Password)
+	ams.EventSocketStartup(eslAddr, eslConf.Password)
 
-	httpConf := hlr.HTTPConfigGet()
+	httpConf := ams.HTTPConfigGet()
 	httpAddr := fmt.Sprintf("0.0.0.0:%s", httpConf.Port)
-	srv := hlr.NewWebServer()
+	srv := ams.NewWebServer()
 	srv.Serve(httpAddr)
 }

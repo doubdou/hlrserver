@@ -13,7 +13,7 @@
 		<port>5432</port>
 		
 		<!-- 数据库名称 -->
-		<name>hlr</name>
+		<name>ams</name>
 		
 		<!-- 数据库登录账号 -->
 		<user>postgres</user>

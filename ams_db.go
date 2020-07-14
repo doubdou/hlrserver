@@ -1,4 +1,4 @@
-package hlr
+package ams
 
 import (
 	"database/sql"
@@ -8,7 +8,7 @@ import (
 
 var dbConn *sql.DB
 
-//AppConnector hlr对数据库操作的上下文
+//AppConnector ams对数据库操作的上下文
 type AppConnector struct {
 	dbConn *sql.DB
 }
@@ -16,9 +16,9 @@ type AppConnector struct {
 //数据库连接
 var appConnector *AppConnector
 
-var createDatabaseSQL string = "CREATE DATABASE hlr;"
+var createDatabaseSQL string = "CREATE DATABASE ams;"
 
-var createDomainSQL string = `CREATE TABLE hlr_domain (
+var createDomainSQL string = `CREATE TABLE ams_domain (
 	id serial PRIMARY KEY NOT NULL,
 	name varchar(128) NOT NULL,
 	tenant_id int NOT NULL,
@@ -27,7 +27,7 @@ var createDomainSQL string = `CREATE TABLE hlr_domain (
 	update timestamp(6) DEFAULT now()
  	);`
 
-var createGroupSQL string = `CREATE TABLE hlr_group (
+var createGroupSQL string = `CREATE TABLE ams_group (
 	id serial PRIMARY KEY NOT NULL,
 	name varchar(64) NOT NULL,
 	group_desc text,
@@ -36,7 +36,7 @@ var createGroupSQL string = `CREATE TABLE hlr_group (
 	update timestamp(6) DEFAULT now()
 	);`
 
-var createUserSQL string = `CREATE TABLE hlr_user (
+var createUserSQL string = `CREATE TABLE ams_user (
 	id serial PRIMARY KEY NOT NULL,
 	username varchar(64) NOT NULL,
 	password varchar(64) NOT NULL,
@@ -44,41 +44,41 @@ var createUserSQL string = `CREATE TABLE hlr_user (
 	update timestamp(6) DEFAULT now()
 	);`
 
-var insertDomainSQL string = "INSERT INTO hlr_domain(name,tenant_id,company,enable) VALUES('%s','%d','%s',%s) RETURNING id"
-var insertGroupSQL string = "INSERT INTO hlr_group(name,group_desc,parent_id,domain_id) VALUES('%s','%s','%d','%d') RETURNING id"
-var insertUserSQL string = "INSERT INTO hlr_user(username,password,group_id) VALUES('%s','%s','%d') RETURNING id"
+var insertDomainSQL string = "INSERT INTO ams_domain(name,tenant_id,company,enable) VALUES('%s','%d','%s',%s) RETURNING id"
+var insertGroupSQL string = "INSERT INTO ams_group(name,group_desc,parent_id,domain_id) VALUES('%s','%s','%d','%d') RETURNING id"
+var insertUserSQL string = "INSERT INTO ams_user(username,password,group_id) VALUES('%s','%s','%d') RETURNING id"
 
-var selectEnabledUsersSQL string = "select u.id,u.username,u.password,u.group_id from hlr_user as u left join hlr_group as g on u.group_id=g.id where g.domain_id=%d;"
-var selectEnabledDomainsSQL string = "SELECT id,name,tenant_id,company FROM hlr_domain where enable=true"
-var selectDomainSQL string = "SELECT id,name,tenant_id,company,enable FROM hlr_domain where id=%s"
-var selectGroupSQL string = "SELECT id,name,group_desc,parent_id,domain_id FROM hlr_group where id=%s"
-var selectUserSQL string = "SELECT id,username,password,group_id FROM hlr_user where id=%s"
+var selectEnabledUsersSQL string = "select u.id,u.username,u.password,u.group_id from ams_user as u left join ams_group as g on u.group_id=g.id where g.domain_id=%d;"
+var selectEnabledDomainsSQL string = "SELECT id,name,tenant_id,company FROM ams_domain where enable=true"
+var selectDomainSQL string = "SELECT id,name,tenant_id,company,enable FROM ams_domain where id=%s"
+var selectGroupSQL string = "SELECT id,name,group_desc,parent_id,domain_id FROM ams_group where id=%s"
+var selectUserSQL string = "SELECT id,username,password,group_id FROM ams_user where id=%s"
 
 /*
-var updateDomainSQL string = "UPDATE hlr_domain SET name='%s',tenant_id=%d,company='%s',enable=%t where id=%d"
-var updateGroupSQL string = "UPDATE hlr_group SET name='%s',group_desc='%s',parent_id=%d,domain_id=%d where id=%d"
-var updateUserSQL string = "UPDATE hlr_user SET username='%s',password='%s',group_id=%d,status='%s',state='%s' where id=%d"
+var updateDomainSQL string = "UPDATE ams_domain SET name='%s',tenant_id=%d,company='%s',enable=%t where id=%d"
+var updateGroupSQL string = "UPDATE ams_group SET name='%s',group_desc='%s',parent_id=%d,domain_id=%d where id=%d"
+var updateUserSQL string = "UPDATE ams_user SET username='%s',password='%s',group_id=%d,status='%s',state='%s' where id=%d"
 */
-var updateDomainSQL string = "UPDATE hlr_domain SET name=$1,tenant_id=$2,company=$3,enable=$4 where id=$5"
-var updateGroupSQL string = "UPDATE hlr_group SET name=$1,group_desc=$2,parent_id=$3,domain_id=$4 where id=$5"
-var updateUserSQL string = "UPDATE hlr_user SET username=$1,password=$2,group_id=$3 where id=$4"
+var updateDomainSQL string = "UPDATE ams_domain SET name=$1,tenant_id=$2,company=$3,enable=$4 where id=$5"
+var updateGroupSQL string = "UPDATE ams_group SET name=$1,group_desc=$2,parent_id=$3,domain_id=$4 where id=$5"
+var updateUserSQL string = "UPDATE ams_user SET username=$1,password=$2,group_id=$3 where id=$4"
 
-var deleteDomainSQL string = "DELETE FROM hlr_domain WHERE id = $1"
-var deleteGroupSQL string = "DELETE FROM hlr_group WHERE id = $1"
-var deleteUserSQL string = "DELETE FROM hlr_user WHERE id = $1"
+var deleteDomainSQL string = "DELETE FROM ams_domain WHERE id = $1"
+var deleteGroupSQL string = "DELETE FROM ams_group WHERE id = $1"
+var deleteUserSQL string = "DELETE FROM ams_user WHERE id = $1"
 
 //GetDBConnector 返回与数据库的连接
 func GetDBConnector() (*AppConnector, error) {
 	if appConnector != nil {
 		return appConnector, nil
 	}
-	return nil, errors.New("HLR is not connected to the database")
+	return nil, errors.New("ams is not connected to the database")
 }
 
 //OpenDBConnector 建立与DB的连接并返回
 func OpenDBConnector(host string, port string, user string, password string, dbName string) (*AppConnector, error) {
 	if appConnector != nil {
-		return nil, errors.New("HLR already connected to the database")
+		return nil, errors.New("ams already connected to the database")
 	}
 	dbSource := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		host, port, user, password, dbName)
@@ -138,15 +138,15 @@ func (c *AppConnector) insertSQL(SQL string, args ...interface{}) (int64, error)
 func (c *AppConnector) CreateTable() {
 	err := c.execSQL(createDomainSQL)
 	if err != nil {
-		Error.Println("create hlr_domain fail ", err)
+		Error.Println("create ams_domain fail ", err)
 	}
 	err = c.execSQL(createGroupSQL)
 	if err != nil {
-		Error.Println("create hlr_group fail ", err)
+		Error.Println("create ams_group fail ", err)
 	}
 	err = c.execSQL(createUserSQL)
 	if err != nil {
-		Error.Println("create hlr_user fail ", err)
+		Error.Println("create ams_user fail ", err)
 	}
 }
 

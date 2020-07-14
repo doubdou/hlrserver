@@ -1,4 +1,4 @@
-package hlr
+package ams
 
 import (
 	"strings"

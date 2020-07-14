@@ -1,4 +1,4 @@
-package hlr
+package ams
 
 import (
 	"encoding/json"
@@ -14,7 +14,7 @@ type httpRespDesc struct {
 
 const (
 	codeSuccess reason = 0
-	/*********HLR内部定义错误状态码****************************/
+	/*********ams内部定义错误状态码****************************/
 	//http请求问题
 	codeBodyEmpty         reason = 101
 	codeLackOfParams      reason = 102

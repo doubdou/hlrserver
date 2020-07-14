@@ -1,4 +1,4 @@
-package hlr
+package ams
 
 //https://github.com/fiorix/go-eventsocket
 
@@ -39,34 +39,34 @@ type EventsocketConfig struct {
 	Password string `xml:"password"`
 }
 
-var hlrConfig ConfigRoot
+var amsConfig ConfigRoot
 
 // HTTPConfigGet 获取配置数据
 func HTTPConfigGet() *HTTPConfig {
-	return &hlrConfig.HTTP
+	return &amsConfig.HTTP
 }
 
 // DatabaseConfigGet 获取配置数据
 func DatabaseConfigGet() *DatabaseConfig {
-	return &hlrConfig.Db
+	return &amsConfig.Db
 }
 
 //EventsocketConfigGet 获取配置数据
 func EventsocketConfigGet() *EventsocketConfig {
-	return &hlrConfig.ESL
+	return &amsConfig.ESL
 }
 
 // LoadConfig 加载配置数据
 func LoadConfig() {
-	content, err := ioutil.ReadFile("./hlr.xml")
+	content, err := ioutil.ReadFile("./ams.xml")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err.Error())
 		os.Exit(9)
 	}
 
-	xml.Unmarshal(content, &hlrConfig)
+	xml.Unmarshal(content, &amsConfig)
 	fmt.Println("--------------------")
-	fmt.Println(hlrConfig)
+	fmt.Println(amsConfig)
 	fmt.Println("--------------------")
 	//日志初始化
 	loggerInit()

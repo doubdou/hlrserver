@@ -1,7 +1,7 @@
-package hlr
+package ams
 
 //启动ws服务，多线程并发:
-//	1.客户端向HLR发送建立连接请求，参数包含组ID
+//	1.客户端向ams发送建立连接请求，参数包含组ID
 //	2.向业务层发送坐席状态变更的通知
 import (
 	"encoding/json"
@@ -16,14 +16,14 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-type hlrHTTPHandlers map[string]map[string]interface{}
+type amsHTTPHandlers map[string]map[string]interface{}
 
 /*
 WebServer web服务存储结构，二维map表以如下方式：
 	【路由：http请求方法：处理函数】
 */
 type WebServer struct {
-	httpHandlerMap hlrHTTPHandlers
+	httpHandlerMap amsHTTPHandlers
 }
 
 /* 空闲坐席哈希表存储结构
@@ -276,9 +276,9 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 
 	domainStr := domainArr[0]
 	userStr := userArr[0]
-	hlrDataManage.RLock()
-	defer hlrDataManage.RUnlock()
-	thisDomain := hlrDataManage.mapping[domainStr]
+	amsDataManage.RLock()
+	defer amsDataManage.RUnlock()
+	thisDomain := amsDataManage.mapping[domainStr]
 	if thisDomain == nil {
 		Error.Printf("auth request refused because domain[%s] not exists:", domainStr)
 		w.WriteHeader(400)
@@ -306,7 +306,7 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 
 /*
 在浏览器的console中可以调试websocket服务，举例：
-	var ws = new WebSocket("ws://localhost:8083/v1/voip/hlr/agent")
+	var ws = new WebSocket("ws://localhost:8083/v1/voip/ams/agent")
 	ws.addEventListener("message", function(e){console.log(e);});
 	ws.send("hello, this is ws client")
 	ws.close()
@@ -355,7 +355,7 @@ ERR:
 	conn.Close()
 }
 
-func (srv *WebServer) hlrHTTPSubFunc(w http.ResponseWriter, r *http.Request) {
+func (srv *WebServer) amsHTTPSubFunc(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		Error.Println("sub directory not support POST method")
 		fmt.Fprintf(w, errorMessage(codeBadRequestMethod))
@@ -371,7 +371,7 @@ func (srv *WebServer) hlrHTTPSubFunc(w http.ResponseWriter, r *http.Request) {
 	handler.(func(http.ResponseWriter, *http.Request))(w, r)
 }
 
-func (srv *WebServer) hlrHTTPFunc(w http.ResponseWriter, r *http.Request) {
+func (srv *WebServer) amsHTTPFunc(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	v := vars["category"]
 	handler := srv.httpHandlerMap[v][r.Method]
@@ -385,7 +385,7 @@ func (srv *WebServer) hlrHTTPFunc(w http.ResponseWriter, r *http.Request) {
 //NewWebServer 注册http路由，生成一个新的web服务实例
 func NewWebServer() *WebServer {
 	var server WebServer
-	handlers := make(hlrHTTPHandlers)
+	handlers := make(amsHTTPHandlers)
 	//域路由
 	handlers["domain"] = make(map[string]interface{})
 	handlers["domain"]["GET"] = domainGet
@@ -422,8 +422,8 @@ func (srv *WebServer) Serve(addr string) error {
 	}
 	//路由绑定
 	r := mux.NewRouter()
-	r.HandleFunc("/v1/voip/hlr/{category}", srv.hlrHTTPFunc)
-	r.HandleFunc("/v1/voip/hlr/{category}/{id:[0-9]+}", srv.hlrHTTPSubFunc)
+	r.HandleFunc("/v1/voip/ams/{category}", srv.amsHTTPFunc)
+	r.HandleFunc("/v1/voip/ams/{category}/{id:[0-9]+}", srv.amsHTTPSubFunc)
 
 	Info.Println("http serve gid: ", getGID())
 	//服务端启动
