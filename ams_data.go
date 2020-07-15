@@ -101,7 +101,7 @@ func userStatusSet(username string, realm string, status userstatusType) {
 		Info.Printf("%s Status: from %s change to %s", username, u.Status, status)
 		u.Status = status
 	} else {
-		Warning.Printf("%s Status is alreay %s", username, u.Status)
+		Warning.Printf("%s Status is already %s", username, u.Status)
 	}
 	u.Unlock()
 	domain.RUnlock()
@@ -129,7 +129,7 @@ func userStateSet(username string, realm string, state agentStateType) {
 		Info.Printf("%s state: from %s change to %s", username, u.Status, state)
 		u.State = state
 	} else {
-		Warning.Printf("%s state is alreay %s", username, u.State)
+		Warning.Printf("%s state is already %s", username, u.State)
 	}
 	u.Unlock()
 	domain.RUnlock()

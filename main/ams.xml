@@ -2,7 +2,6 @@
 	<http>
 		<!-- HTTP监听端口 -->
 		<port>8083</port>
-    	<threads>8</threads>
 	</http>
 
 	<database>

@@ -193,47 +193,47 @@ func userAdd(w http.ResponseWriter, r *http.Request) {
 //<?xml version=\"1.0\" standalone=\"no\"?>
 func authInfoMarshal(domain string, groupID int, username string, password string) string {
 	return fmt.Sprintf(`
-<?xml version=\"1.0\" standalone=\"no\"?>
-<document type="freeswitch/xml">
-<section name="directory">
-<domain name="%s">
-<params>
-<param name="dial-string" value="{^^:sip_invite_domain=%s:presence_id=%s@%s}${sofia_contact(*/%s@%s)},${verto_contact(%s@%s)}"/>
-<param name="jsonrpc-allowed-methods" value="verto"/>
-<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
-</params>
-<variables>
-<variable name="record_stereo" value="true"/>
-<variable name="default_gateway" value="%s"/>
-<variable name="default_areacode" value="%s"/>
-<variable name="transfer_fallback_usernamesion" value="operator"/>
-</variables>
-<groups>
-<group name="g%d">
-<users>
-<user id="%s">
-<params>
-<param name="password" value="%s"/>
-<param name="vm-password" value="%s"/>
-</params>
-<variables>
-<variable name="toll_allow" value="domestic,international,local"/>
-<variable name="accountcode" value="86"/>
-<variable name="user_context" value="default"/>
-<variable name="effective_caller_id_name" value="Extension %s"/>
-<variable name="effective_caller_id_number" value="%s"/>
-<variable name="outbound_caller_id_name" value="FS callcenter"/>
-<variable name="outbound_caller_id_number" value="8888"/>
-<variable name="callgroup" value="g%d"/>
-</variables>
-</user>  
-</users>
-</group>
-</groups>
-</domain>
-</section> 
-</document>
-`,
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="%s">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=%s:presence_id=%s@%s}${sofia_contact(*/%s@%s)},${verto_contact(%s@%s)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="%s"/>
+	<variable name="default_areacode" value="%s"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g%d">
+	<users>
+	<user id="%s">
+	<params>
+	<param name="password" value="%s"/>
+	<param name="vm-password" value="%s"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension %s"/>
+	<variable name="effective_caller_id_number" value="%s"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g%d"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	`,
 		domain,
 		domain, username, domain, username, domain, username, domain,
 		domain,
@@ -249,6 +249,7 @@ func authInfoMarshal(domain string, groupID int, username string, password strin
 
 //鉴权
 func numberAuth(w http.ResponseWriter, r *http.Request) {
+	Debug.Println("recv auth request", r.RequestURI)
 	err := r.ParseForm()
 	if err != nil {
 		Error.Println("number auth, pase form fail", err)
@@ -256,15 +257,38 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, errorMessage(codeBadRequest))
 		return
 	}
-
-	authtype := r.PostForm["action"]
-	if len(authtype) != 1 {
-		Error.Println("auth request refused because authtype not found")
+	eventNameArr := r.PostForm["Event-Name"]
+	if len(eventNameArr) != 1 {
+		Error.Println("number auth bad request:event-name not found")
 		w.WriteHeader(400)
 		fmt.Fprintf(w, errorMessage(codeBadRequest))
 		return
 	}
 
+	if eventNameArr[0] == "GENERAL" {
+		w.WriteHeader(200)
+		return
+	} else if eventNameArr[0] == "REQUEST_PARAMS" {
+		actionArr := r.PostForm["action"]
+		if len(actionArr) != 1 {
+			w.WriteHeader(200)
+			return
+		}
+		if actionArr[0] != "sip_auth" && actionArr[0] != "jsonrpc-authenticate" && actionArr[0] != "user_call" {
+			Error.Printf("number auth bad request:event-name:%s action:%s", eventNameArr[0], actionArr[0])
+			w.WriteHeader(400)
+			fmt.Fprintf(w, errorMessage(codeBadRequest))
+			return
+		}
+	}
+	// authtype := r.PostForm["action"]
+	// if len(authtype) != 1 {
+	// 	Error.Println("auth request refused because authtype not found")
+	// 	w.WriteHeader(400)
+	// 	fmt.Fprintf(w, errorMessage(codeBadRequest))
+	// 	return
+	// }
+	Debug.Println(r.PostForm)
 	userArr := r.PostForm["user"]
 	domainArr := r.PostForm["domain"]
 	if len(userArr) != 1 || len(domainArr) != 1 {

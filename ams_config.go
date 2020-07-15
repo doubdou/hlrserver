@@ -18,8 +18,7 @@ type ConfigRoot struct {
 
 //HTTPConfig 定义http配置数据
 type HTTPConfig struct {
-	Port    string `xml:"port"`
-	Threads string `xml:"threads"`
+	Port string `xml:"port"`
 }
 
 //DatabaseConfig 定义db配置数据

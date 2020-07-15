@@ -1,0 +1,1981 @@
+2020/07/14 11:09:15 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 11:09:15 ams_web.go:428: [INFO] http serve gid:  1
+2020/07/14 11:10:33 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:49176
+2020/07/14 11:10:33 ams_event_socket.go:83: [ERROR] recv [CUSTOM verto::login] 3000051003@ai-ym.com Login Incorrect from 192.168.71.1:49176
+2020/07/14 11:10:50 ams_event_socket.go:100: [ERROR] [CUSTOM verto::client_disconnect] [Verto_Login] value invalid 
+2020/07/14 11:11:15 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:49192
+2020/07/14 11:11:15 ams_event_socket.go:83: [ERROR] recv [CUSTOM verto::login] 3000051003@ai-ym.com Login Incorrect from 192.168.71.1:49192
+2020/07/14 11:11:24 ams_event_socket.go:100: [ERROR] [CUSTOM verto::client_disconnect] [Verto_Login] value invalid 
+2020/07/14 11:11:24 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:49193
+2020/07/14 11:11:24 ams_event_socket.go:83: [ERROR] recv [CUSTOM verto::login] 3000051003@ai-ym.com Login Incorrect from 192.168.71.1:49193
+2020/07/14 11:11:42 ams_event_socket.go:100: [ERROR] [CUSTOM verto::client_disconnect] [Verto_Login] value invalid 
+2020/07/14 11:11:42 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:49195
+2020/07/14 11:11:42 ams_event_socket.go:83: [ERROR] recv [CUSTOM verto::login] 3000051003@ai-ym.com Login Incorrect from 192.168.71.1:49195
+2020/07/14 11:13:06 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 1003@192.168.71.137 from 192.168.71.1:26762
+2020/07/14 11:13:15 ams_event_socket.go:61: [DEBUG] recv [CUSTOM sofia::unregister] 1003@192.168.71.137 from 192.168.71.1:26762
+2020/07/14 11:13:39 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 11:13:39 ams_web.go:428: [INFO] http serve gid:  1
+2020/07/14 11:13:49 ams_event_socket.go:100: [ERROR] [CUSTOM verto::client_disconnect] [Verto_Login] value invalid 
+2020/07/14 11:13:49 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:49223
+2020/07/14 11:13:49 ams_event_socket.go:83: [ERROR] recv [CUSTOM verto::login] 3000051003@ai-ym.com Login Incorrect from 192.168.71.1:49223
+2020/07/14 11:14:09 ams_event_socket.go:100: [ERROR] [CUSTOM verto::client_disconnect] [Verto_Login] value invalid 
+2020/07/14 11:14:09 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:49231
+2020/07/14 11:14:10 ams_event_socket.go:83: [ERROR] recv [CUSTOM verto::login] 3000051003@ai-ym.com Login Incorrect from 192.168.71.1:49231
+2020/07/14 11:14:13 ams_event_socket.go:100: [ERROR] [CUSTOM verto::client_disconnect] [Verto_Login] value invalid 
+2020/07/14 11:14:13 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:49233
+2020/07/14 11:14:13 ams_event_socket.go:83: [ERROR] recv [CUSTOM verto::login] 3000051003@ai-ym.com Login Incorrect from 192.168.71.1:49233
+2020/07/14 11:14:17 ams_event_socket.go:100: [ERROR] [CUSTOM verto::client_disconnect] [Verto_Login] value invalid 
+2020/07/14 11:14:17 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:49234
+2020/07/14 11:14:17 ams_event_socket.go:83: [ERROR] recv [CUSTOM verto::login] 3000051003@ai-ym.com Login Incorrect from 192.168.71.1:49234
+2020/07/14 11:15:30 ams_event_socket.go:100: [ERROR] [CUSTOM verto::client_disconnect] [Verto_Login] value invalid 
+2020/07/14 11:15:30 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:49261
+2020/07/14 11:15:31 ams_web.go:302: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 11:15:31 ams_event_socket.go:86: [DEBUG] recv [CUSTOM verto::login] 3000051003@ai-ym.com Logged in from 192.168.71.1:49261
+2020/07/14 11:15:31 ams_data.go:101: [INFO] 3000051003 Status: from Logged Out change to Available
+2020/07/14 11:15:54 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 11:15:54 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 11:15:54 ams_data.go:101: [INFO] 3000051001 Status: from Logged Out change to Available
+2020/07/14 11:21:18 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 11:21:18 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 11:21:18 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 11:26:42 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 11:26:42 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 11:26:42 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 11:32:07 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 11:32:07 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 11:32:07 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 11:37:31 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 11:37:31 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 11:37:31 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 11:42:55 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 11:42:55 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 11:42:55 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 11:48:19 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 11:48:19 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 11:48:19 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 11:53:44 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 11:53:44 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 11:53:44 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 11:59:08 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 11:59:08 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 11:59:08 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:04:32 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:04:32 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:04:32 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:09:56 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:09:57 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:09:57 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:15:21 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:15:21 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:15:21 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:20:45 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:20:45 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:20:45 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:26:09 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:26:09 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:26:09 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:31:34 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:31:34 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:31:34 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:36:58 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:36:58 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:36:58 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:42:22 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:42:22 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:42:22 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:47:46 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:47:46 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:47:46 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:53:11 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:53:11 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:53:11 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 12:58:35 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 12:58:35 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 12:58:35 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 13:03:59 ams_web.go:302: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:03:59 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 13:03:59 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 13:09:01 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 13:09:01 ams_web.go:429: [INFO] http serve gid:  1
+2020/07/14 13:09:13 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:09:13 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:09:23 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:09:23 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:09:23 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 13:09:23 ams_data.go:101: [INFO] 3000051001 Status: from Logged Out change to Available
+2020/07/14 13:10:49 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:10:49 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:10:51 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:10:51 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:10:53 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:10:53 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:11:28 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:11:28 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:11:32 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:11:32 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:11:34 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:11:34 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:12:40 ams_event_socket.go:106: [DEBUG] recv [CUSTOM verto::client_disconnect] 3000051003@ai-ym.com from 192.168.71.1:49261
+2020/07/14 13:12:40 ams_data.go:104: [WARNING] 3000051003 Status is alreay Logged Out
+2020/07/14 13:12:40 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:55717
+2020/07/14 13:12:40 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:12:40 ams_web.go:303: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 13:12:40 ams_event_socket.go:86: [DEBUG] recv [CUSTOM verto::login] 3000051003@ai-ym.com Logged in from 192.168.71.1:55717
+2020/07/14 13:12:40 ams_data.go:101: [INFO] 3000051003 Status: from Logged Out change to Available
+2020/07/14 13:12:53 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:12:53 ams_web.go:303: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 13:12:53 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051003@ai-ym.com
+2020/07/14 13:12:53 ams_data.go:157: [INFO] 3000051003 talking from false to true
+2020/07/14 13:13:52 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051003@ai-ym.com
+2020/07/14 13:13:52 ams_data.go:157: [INFO] 3000051003 talking from true to false
+2020/07/14 13:14:48 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:14:48 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:14:48 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 13:14:48 ams_data.go:104: [WARNING] 3000051001 Status is alreay Available
+2020/07/14 13:16:54 ams_event_socket.go:106: [DEBUG] recv [CUSTOM verto::client_disconnect] 3000051003@ai-ym.com from 192.168.71.1:55717
+2020/07/14 13:16:54 ams_data.go:101: [INFO] 3000051003 Status: from Available change to Logged Out
+2020/07/14 13:16:55 ams_event_socket.go:170: [ERROR] unsubscribed event  
+2020/07/14 13:16:55 ams_event_socket.go:157: [ERROR] event socket disconnected EOF
+2020/07/14 13:16:57 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:17:04 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:17:06 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:17:06 ams_web.go:263: [ERROR] auth request refused because authtype not found
+2020/07/14 13:17:06 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:17:06 ams_web.go:263: [ERROR] auth request refused because authtype not found
+2020/07/14 13:17:08 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:17:08 ams_web.go:263: [ERROR] auth request refused because authtype not found
+2020/07/14 13:17:08 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:17:08 ams_web.go:303: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 13:17:09 ams_event_socket.go:159: [INFO] event socket connect to FreeSWITCH success
+2020/07/14 13:17:58 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 13:17:58 ams_web.go:429: [INFO] http serve gid:  1
+2020/07/14 13:18:05 ams_event_socket.go:106: [DEBUG] recv [CUSTOM verto::client_disconnect] 3000051003@ai-ym.com from 192.168.71.1:55778
+2020/07/14 13:18:05 ams_data.go:104: [WARNING] 3000051003 Status is already Logged Out
+2020/07/14 13:18:06 ams_event_socket.go:170: [ERROR] unsubscribed event  
+2020/07/14 13:18:06 ams_event_socket.go:157: [ERROR] event socket disconnected EOF
+2020/07/14 13:18:08 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:18:13 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:18:13 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:18:13 ams_web.go:272: [ERROR] number auth fail: bad request  [] []
+2020/07/14 13:18:13 ams_web.go:272: [ERROR] number auth fail: bad request  [] []
+2020/07/14 13:18:14 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:18:14 ams_web.go:303: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 13:18:14 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:18:14 ams_web.go:272: [ERROR] number auth fail: bad request  [] [192.168.71.137]
+2020/07/14 13:18:14 ams_event_socket.go:159: [INFO] event socket connect to FreeSWITCH success
+2020/07/14 13:18:42 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:18:42 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:18:43 ams_event_socket.go:61: [DEBUG] recv [CUSTOM sofia::unregister] 3000051001@ai-ym.com from 192.168.71.1:55268
+2020/07/14 13:18:43 ams_data.go:104: [WARNING] 3000051001 Status is already Logged Out
+2020/07/14 13:18:47 ams_event_socket.go:106: [DEBUG] recv [CUSTOM verto::client_disconnect] 3000051003@ai-ym.com from 192.168.71.1:55793
+2020/07/14 13:18:47 ams_data.go:104: [WARNING] 3000051003 Status is already Logged Out
+2020/07/14 13:19:00 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 13:19:00 ams_web.go:429: [INFO] http serve gid:  1
+2020/07/14 13:19:09 ams_event_socket.go:170: [ERROR] unsubscribed event  
+2020/07/14 13:19:09 ams_event_socket.go:157: [ERROR] event socket disconnected EOF
+2020/07/14 13:19:11 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:19:13 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:19:13 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:19:13 ams_web.go:272: [ERROR] number auth fail: bad request  [] []
+2020/07/14 13:19:13 ams_web.go:272: [ERROR] number auth fail: bad request  [] []
+2020/07/14 13:19:14 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:19:14 ams_web.go:272: [ERROR] number auth fail: bad request  [] [192.168.71.137]
+2020/07/14 13:19:16 ams_event_socket.go:159: [INFO] event socket connect to FreeSWITCH success
+2020/07/14 13:21:55 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 13:21:55 ams_web.go:429: [INFO] http serve gid:  1
+2020/07/14 13:22:00 ams_event_socket.go:170: [ERROR] unsubscribed event  
+2020/07/14 13:22:00 ams_event_socket.go:157: [ERROR] event socket disconnected EOF
+2020/07/14 13:22:02 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:22:09 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:22:16 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:22:23 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:22:25 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:22:25 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:22:25 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[sofia.c] Event-Calling-Function:[launch_sofia_worker_thread] Event-Calling-Line-Number:[3064] Event-Date-GMT:[Tue, 14 Jul 2020 05:22:24 GMT] Event-Date-Local:[2020-07-14 13:22:24] Event-Date-Timestamp:[1594704144720856] Event-Name:[REQUEST_PARAMS] Event-Sequence:[49] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] hostname:[docker.hlr.192.168.71.137.58021] key_name:[] key_value:[] profile:[internal] purpose:[gateways] section:[directory] tag_name:[]]
+2020/07/14 13:22:25 ams_web.go:272: [ERROR] number auth fail: bad request  [] []
+2020/07/14 13:22:25 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[sofia.c] Event-Calling-Function:[launch_sofia_worker_thread] Event-Calling-Line-Number:[3064] Event-Date-GMT:[Tue, 14 Jul 2020 05:22:24 GMT] Event-Date-Local:[2020-07-14 13:22:24] Event-Date-Timestamp:[1594704144718094] Event-Name:[REQUEST_PARAMS] Event-Sequence:[46] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] hostname:[docker.hlr.192.168.71.137.58021] key_name:[] key_value:[] profile:[external] purpose:[gateways] section:[directory] tag_name:[]]
+2020/07/14 13:22:25 ams_web.go:272: [ERROR] number auth fail: bad request  [] []
+2020/07/14 13:22:27 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:22:27 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[switch_core.c] Event-Calling-Function:[switch_load_network_lists] Event-Calling-Line-Number:[1621] Event-Date-GMT:[Tue, 14 Jul 2020 05:22:26 GMT] Event-Date-Local:[2020-07-14 13:22:26] Event-Date-Timestamp:[1594704146283983] Event-Name:[GENERAL] Event-Sequence:[489] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] domain:[192.168.71.137] hostname:[docker.hlr.192.168.71.137.58021] key_name:[name] key_value:[192.168.71.137] purpose:[network-list] section:[directory] tag_name:[domain]]
+2020/07/14 13:22:27 ams_web.go:272: [ERROR] number auth fail: bad request  [] [192.168.71.137]
+2020/07/14 13:22:28 ams_event_socket.go:159: [INFO] event socket connect to FreeSWITCH success
+2020/07/14 13:23:08 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:23:08 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 05:23:07 GMT] Event-Date-Local:[2020-07-14 13:23:07] Event-Date-Timestamp:[1594704187705321] Event-Name:[REQUEST_PARAMS] Event-Sequence:[508] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[37974] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[39f023cada472b8f57fb555205d60851] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[19b00772-c592-11ea-acfd-17383d490094] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[ae5b2c474a5677cc6148cde9f6761381] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[NmIxOGUxNTk1ZTIwZTc0OTc0YjYxMGZhNDAwYzZiOWI.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:23:08 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:23:08 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:37974
+2020/07/14 13:23:08 ams_data.go:101: [INFO] 3000051001 Status: from Logged Out change to Available
+2020/07/14 13:26:44 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:55926
+2020/07/14 13:26:44 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:26:44 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[mod_verto.c] Event-Calling-Function:[check_auth] Event-Calling-Line-Number:[957] Event-Date-GMT:[Tue, 14 Jul 2020 05:26:43 GMT] Event-Date-Local:[2020-07-14 13:26:43] Event-Date-Timestamp:[1594704403485612] Event-Name:[REQUEST_PARAMS] Event-Sequence:[607] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[jsonrpc-authenticate] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051003]]
+2020/07/14 13:26:44 ams_web.go:303: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 13:26:44 ams_event_socket.go:86: [DEBUG] recv [CUSTOM verto::login] 3000051003@ai-ym.com Logged in from 192.168.71.1:55926
+2020/07/14 13:26:44 ams_data.go:101: [INFO] 3000051003 Status: from Logged Out change to Available
+2020/07/14 13:28:32 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:28:32 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 05:28:31 GMT] Event-Date-Local:[2020-07-14 13:28:31] Event-Date-Timestamp:[1594704511985990] Event-Name:[REQUEST_PARAMS] Event-Sequence:[659] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[37974] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[718abbe334a2e1d692500070157dfc21] sip_auth_method:[REGISTER] sip_auth_nc:[00000002] sip_auth_nonce:[19b00772-c592-11ea-acfd-17383d490094] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[5fc4ae93315aafc8d4a47c9e5cbe5dda] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[NmIxOGUxNTk1ZTIwZTc0OTc0YjYxMGZhNDAwYzZiOWI.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:28:32 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:28:32 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:37974
+2020/07/14 13:28:32 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 13:30:53 ams_event_socket.go:106: [DEBUG] recv [CUSTOM verto::client_disconnect] 3000051003@ai-ym.com from 192.168.71.1:55926
+2020/07/14 13:30:53 ams_data.go:101: [INFO] 3000051003 Status: from Available change to Logged Out
+2020/07/14 13:30:55 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:30:55 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[mod_verto.c] Event-Calling-Function:[check_auth] Event-Calling-Line-Number:[957] Event-Date-GMT:[Tue, 14 Jul 2020 05:30:54 GMT] Event-Date-Local:[2020-07-14 13:30:54] Event-Date-Timestamp:[1594704654945911] Event-Name:[REQUEST_PARAMS] Event-Sequence:[728] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[jsonrpc-authenticate] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051003]]
+2020/07/14 13:30:55 ams_web.go:303: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 13:30:55 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:55978
+2020/07/14 13:30:55 ams_event_socket.go:86: [DEBUG] recv [CUSTOM verto::login] 3000051003@ai-ym.com Logged in from 192.168.71.1:55978
+2020/07/14 13:30:55 ams_data.go:101: [INFO] 3000051003 Status: from Logged Out change to Available
+2020/07/14 13:33:57 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:33:57 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 05:33:56 GMT] Event-Date-Local:[2020-07-14 13:33:56] Event-Date-Timestamp:[1594704836265979] Event-Name:[REQUEST_PARAMS] Event-Sequence:[809] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[37974] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[c0c8ef6bcc1479e7943dfc3c89cd2971] sip_auth_method:[REGISTER] sip_auth_nc:[00000003] sip_auth_nonce:[19b00772-c592-11ea-acfd-17383d490094] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[6df83173c062085e63558463d0514408] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[NmIxOGUxNTk1ZTIwZTc0OTc0YjYxMGZhNDAwYzZiOWI.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:33:57 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:33:57 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:37974
+2020/07/14 13:33:57 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 13:39:21 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:39:21 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 05:39:20 GMT] Event-Date-Local:[2020-07-14 13:39:20] Event-Date-Timestamp:[1594705160605316] Event-Name:[REQUEST_PARAMS] Event-Sequence:[949] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[37974] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[860c5492f7227ad04dc8dd530c0dd9a5] sip_auth_method:[REGISTER] sip_auth_nc:[00000004] sip_auth_nonce:[19b00772-c592-11ea-acfd-17383d490094] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[02c5312a7c0ece3813e5ed19d3882018] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[NmIxOGUxNTk1ZTIwZTc0OTc0YjYxMGZhNDAwYzZiOWI.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:39:21 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:39:21 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:37974
+2020/07/14 13:39:21 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 13:42:40 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:42:40 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:42:40 GMT] Event-Date-Local:[2020-07-14 13:42:40] Event-Date-Timestamp:[1594705360005377] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1040] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:42:40 ams_web.go:303: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:43:39 ams_web.go:252: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:43:39 ams_web.go:268: [DEBUG] map[Core-UUID:[002c1d7c-c592-11ea-acf8-17383d490094] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:43:38 GMT] Event-Date-Local:[2020-07-14 13:43:38] Event-Date-Timestamp:[1594705418965438] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1067] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051003]]
+2020/07/14 13:43:39 ams_web.go:303: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 13:43:39 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051003@ai-ym.com
+2020/07/14 13:43:39 ams_data.go:157: [INFO] 3000051003 talking from false to true
+2020/07/14 13:52:54 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 13:52:54 ams_web.go:451: [INFO] http serve gid:  1
+2020/07/14 13:53:07 ams_event_socket.go:106: [DEBUG] recv [CUSTOM verto::client_disconnect] 3000051003@ai-ym.com from 192.168.71.1:55978
+2020/07/14 13:53:07 ams_data.go:104: [WARNING] 3000051003 Status is already Logged Out
+2020/07/14 13:53:15 ams_event_socket.go:170: [ERROR] unsubscribed event  
+2020/07/14 13:53:15 ams_event_socket.go:157: [ERROR] event socket disconnected EOF
+2020/07/14 13:53:17 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:53:24 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:53:24 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:53:24 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:53:25 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:53:25 ams_web.go:277: [ERROR] number auth bad request:event-name:REQUEST_PARAMS action:jsonrpc-authenticate
+2020/07/14 13:53:26 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:53:29 ams_event_socket.go:159: [INFO] event socket connect to FreeSWITCH success
+2020/07/14 13:54:57 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:54:57 ams_web.go:277: [ERROR] number auth bad request:event-name:REQUEST_PARAMS action:user_call
+2020/07/14 13:55:10 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:55:10 ams_web.go:277: [ERROR] number auth bad request:event-name:REQUEST_PARAMS action:user_call
+2020/07/14 13:55:50 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 13:55:50 ams_web.go:451: [INFO] http serve gid:  1
+2020/07/14 13:55:54 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:55:54 ams_web.go:290: [DEBUG] map[Core-UUID:[544de27e-c596-11ea-83f3-f53934b4a00b] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:55:53 GMT] Event-Date-Local:[2020-07-14 13:55:53] Event-Date-Timestamp:[1594706153521287] Event-Name:[REQUEST_PARAMS] Event-Sequence:[566] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:55:54 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:56:01 ams_event_socket.go:100: [ERROR] [CUSTOM verto::client_disconnect] [Verto_Login] value invalid 
+2020/07/14 13:56:02 ams_event_socket.go:170: [ERROR] unsubscribed event  
+2020/07/14 13:56:02 ams_event_socket.go:157: [ERROR] event socket disconnected EOF
+2020/07/14 13:56:04 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:56:11 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 13:56:13 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:56:13 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:56:13 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:56:13 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_verto.c] Event-Calling-Function:[check_auth] Event-Calling-Line-Number:[957] Event-Date-GMT:[Tue, 14 Jul 2020 05:56:12 GMT] Event-Date-Local:[2020-07-14 13:56:12] Event-Date-Timestamp:[1594706172235187] Event-Name:[REQUEST_PARAMS] Event-Sequence:[54] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[jsonrpc-authenticate] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051003]]
+2020/07/14 13:56:13 ams_web.go:325: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 13:56:14 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:56:16 ams_event_socket.go:159: [INFO] event socket connect to FreeSWITCH success
+2020/07/14 13:56:34 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:56:34 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 05:56:33 GMT] Event-Date-Local:[2020-07-14 13:56:33] Event-Date-Timestamp:[1594706193171206] Event-Name:[REQUEST_PARAMS] Event-Sequence:[512] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57362] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[5c7f2464472e3b0bc7735a79bb81fff0] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[c509296a-c596-11ea-8040-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[d8c80f4e92e82ebba34f95e583ce55bf] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[ODYwYWM2MDBjN2Y1NWZlNzZiOWRkNjAwYTlhNjhkNmU.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:56:34 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:56:34 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57362
+2020/07/14 13:56:34 ams_data.go:101: [INFO] 3000051001 Status: from Logged Out change to Available
+2020/07/14 13:56:38 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:56:38 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:56:37 GMT] Event-Date-Local:[2020-07-14 13:56:37] Event-Date-Timestamp:[1594706197310995] Event-Name:[REQUEST_PARAMS] Event-Sequence:[520] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:56:38 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:57:34 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:57:34 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:57:33 GMT] Event-Date-Local:[2020-07-14 13:57:33] Event-Date-Timestamp:[1594706253890724] Event-Name:[REQUEST_PARAMS] Event-Sequence:[547] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:57:34 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:57:45 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:57:45 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:57:45 GMT] Event-Date-Local:[2020-07-14 13:57:45] Event-Date-Timestamp:[1594706265031010] Event-Name:[REQUEST_PARAMS] Event-Sequence:[555] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051003]]
+2020/07/14 13:57:45 ams_web.go:325: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 13:57:45 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051003@ai-ym.com
+2020/07/14 13:57:45 ams_data.go:157: [INFO] 3000051003 talking from false to true
+2020/07/14 13:58:03 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051003@ai-ym.com
+2020/07/14 13:58:03 ams_data.go:157: [INFO] 3000051003 talking from true to false
+2020/07/14 13:58:09 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:58:09 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:58:08 GMT] Event-Date-Local:[2020-07-14 13:58:08] Event-Date-Timestamp:[1594706288931386] Event-Name:[REQUEST_PARAMS] Event-Sequence:[587] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:58:09 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:58:57 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:58:57 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:58:56 GMT] Event-Date-Local:[2020-07-14 13:58:56] Event-Date-Timestamp:[1594706336571120] Event-Name:[REQUEST_PARAMS] Event-Sequence:[614] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:58:57 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:58:59 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:58:59 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:58:58 GMT] Event-Date-Local:[2020-07-14 13:58:58] Event-Date-Timestamp:[1594706338810959] Event-Name:[REQUEST_PARAMS] Event-Sequence:[620] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:58:59 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:59:13 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:59:13 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:59:12 GMT] Event-Date-Local:[2020-07-14 13:59:12] Event-Date-Timestamp:[1594706352690889] Event-Name:[REQUEST_PARAMS] Event-Sequence:[631] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 13:59:13 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 13:59:52 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 13:59:52 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 05:59:51 GMT] Event-Date-Local:[2020-07-14 13:59:51] Event-Date-Timestamp:[1594706391991220] Event-Name:[REQUEST_PARAMS] Event-Sequence:[665] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[192.168.71.137] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[192.168.71.137] section:[directory] tag_name:[domain] user:[9196]]
+2020/07/14 13:59:52 ams_web.go:306: [ERROR] auth request refused because domain[192.168.71.137] not exists:
+2020/07/14 13:59:52 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051001@ai-ym.com
+2020/07/14 13:59:52 ams_data.go:157: [INFO] 3000051001 talking from false to true
+2020/07/14 13:59:52 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051001@ai-ym.com
+2020/07/14 13:59:52 ams_data.go:157: [INFO] 3000051001 talking from true to false
+2020/07/14 14:00:05 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051001@ai-ym.com
+2020/07/14 14:00:05 ams_data.go:157: [INFO] 3000051001 talking from false to true
+2020/07/14 14:00:05 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051001@ai-ym.com
+2020/07/14 14:00:05 ams_data.go:157: [INFO] 3000051001 talking from true to false
+2020/07/14 14:00:31 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:00:31 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:00:30 GMT] Event-Date-Local:[2020-07-14 14:00:30] Event-Date-Timestamp:[1594706430571320] Event-Name:[REQUEST_PARAMS] Event-Sequence:[741] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[192.168.71.137] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[192.168.71.137] section:[directory] tag_name:[domain] user:[9196]]
+2020/07/14 14:00:31 ams_web.go:306: [ERROR] auth request refused because domain[192.168.71.137] not exists:
+2020/07/14 14:00:31 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051001@ai-ym.com
+2020/07/14 14:00:31 ams_data.go:157: [INFO] 3000051001 talking from false to true
+2020/07/14 14:00:31 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051001@ai-ym.com
+2020/07/14 14:00:31 ams_data.go:157: [INFO] 3000051001 talking from true to false
+2020/07/14 14:01:16 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051001@ai-ym.com
+2020/07/14 14:01:16 ams_data.go:157: [INFO] 3000051001 talking from false to true
+2020/07/14 14:01:16 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051001@ai-ym.com
+2020/07/14 14:01:16 ams_data.go:157: [INFO] 3000051001 talking from true to false
+2020/07/14 14:01:58 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:01:58 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:01:57 GMT] Event-Date-Local:[2020-07-14 14:01:57] Event-Date-Timestamp:[1594706517411391] Event-Name:[REQUEST_PARAMS] Event-Sequence:[818] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57362] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[ee0e23ba81d502c804c58579d08cf3db] sip_auth_method:[REGISTER] sip_auth_nc:[00000002] sip_auth_nonce:[c509296a-c596-11ea-8040-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[97d0183ce0b7c5e7b4c591074c58a89e] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[ODYwYWM2MDBjN2Y1NWZlNzZiOWRkNjAwYTlhNjhkNmU.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:01:58 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:01:58 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57362
+2020/07/14 14:01:58 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:06:03 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 14:06:03 ams_web.go:451: [INFO] http serve gid:  1
+2020/07/14 14:06:07 ams_event_socket.go:106: [DEBUG] recv [CUSTOM verto::client_disconnect] 3000051003@ai-ym.com from 192.168.71.1:56316
+2020/07/14 14:06:07 ams_data.go:104: [WARNING] 3000051003 Status is already Logged Out
+2020/07/14 14:06:09 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:06:09 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_verto.c] Event-Calling-Function:[check_auth] Event-Calling-Line-Number:[957] Event-Date-GMT:[Tue, 14 Jul 2020 06:06:08 GMT] Event-Date-Local:[2020-07-14 14:06:08] Event-Date-Timestamp:[1594706768590640] Event-Name:[REQUEST_PARAMS] Event-Sequence:[931] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[jsonrpc-authenticate] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051003]]
+2020/07/14 14:06:09 ams_web.go:325: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 14:06:09 ams_event_socket.go:92: [DEBUG] recv [CUSTOM verto::client_connect] client connect from 192.168.71.1:56421
+2020/07/14 14:06:09 ams_event_socket.go:86: [DEBUG] recv [CUSTOM verto::login] 3000051003@ai-ym.com Logged in from 192.168.71.1:56421
+2020/07/14 14:06:09 ams_data.go:101: [INFO] 3000051003 Status: from Logged Out change to Available
+2020/07/14 14:06:20 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:06:20 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:06:19 GMT] Event-Date-Local:[2020-07-14 14:06:19] Event-Date-Timestamp:[1594706779930453] Event-Name:[REQUEST_PARAMS] Event-Sequence:[942] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57362] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[0cf99775b3593c9aebb80305967a1930] sip_auth_method:[REGISTER] sip_auth_nc:[00000003] sip_auth_nonce:[c509296a-c596-11ea-8040-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[e56fec14a48bda9288ebc2453cb80732] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[ODYwYWM2MDBjN2Y1NWZlNzZiOWRkNjAwYTlhNjhkNmU.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:06:20 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:06:20 ams_event_socket.go:61: [DEBUG] recv [CUSTOM sofia::unregister] 3000051001@ai-ym.com from 192.168.71.1:57362
+2020/07/14 14:06:20 ams_data.go:104: [WARNING] 3000051001 Status is already Logged Out
+2020/07/14 14:06:26 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:06:26 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:06:25 GMT] Event-Date-Local:[2020-07-14 14:06:25] Event-Date-Timestamp:[1594706785710672] Event-Name:[REQUEST_PARAMS] Event-Sequence:[949] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[29580] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[ea6c2395092a6e8c1627e33efaf26142] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[2636a54a-c598-11ea-809c-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[44d3809f9d61b3bca62cd254f98b24ff] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[N2IzMzFhODQ3MGFhZjI1Mjg5ODgzMTE2MmNiNGExMmM.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:06:26 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:06:26 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:29580
+2020/07/14 14:06:26 ams_data.go:101: [INFO] 3000051001 Status: from Logged Out change to Available
+2020/07/14 14:06:35 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:06:35 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:06:34 GMT] Event-Date-Local:[2020-07-14 14:06:34] Event-Date-Timestamp:[1594706794770477] Event-Name:[REQUEST_PARAMS] Event-Sequence:[961] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:06:35 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:06:59 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 14:06:59 ams_web.go:451: [INFO] http serve gid:  1
+2020/07/14 14:07:15 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:07:15 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:07:14 GMT] Event-Date-Local:[2020-07-14 14:07:14] Event-Date-Timestamp:[1594706834790941] Event-Name:[REQUEST_PARAMS] Event-Sequence:[982] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:07:15 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:07:15 ams_web.go:326: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:07:46 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:07:46 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:07:45 GMT] Event-Date-Local:[2020-07-14 14:07:45] Event-Date-Timestamp:[1594706865750503] Event-Name:[REQUEST_PARAMS] Event-Sequence:[998] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051003]]
+2020/07/14 14:07:46 ams_web.go:325: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 14:07:46 ams_web.go:326: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051003@ai-ym.com}${sofia_contact(*/3000051003@ai-ym.com)},${verto_contact(3000051003@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051003">
+	<params>
+	<param name="password" value="1003"/>
+	<param name="vm-password" value="3000051003"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051003"/>
+	<variable name="effective_caller_id_number" value="3000051003"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:07:46 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051003@ai-ym.com
+2020/07/14 14:07:46 ams_data.go:157: [INFO] 3000051003 talking from false to true
+2020/07/14 14:08:45 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051003@ai-ym.com
+2020/07/14 14:08:45 ams_data.go:157: [INFO] 3000051003 talking from true to false
+2020/07/14 14:11:50 ams_web.go:251: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:11:50 ams_web.go:290: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:11:49 GMT] Event-Date-Local:[2020-07-14 14:11:49] Event-Date-Timestamp:[1594707109971102] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1122] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[29580] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[f3605a7cb4323a082e5e0b5bfe44ead4] sip_auth_method:[REGISTER] sip_auth_nc:[00000002] sip_auth_nonce:[2636a54a-c598-11ea-809c-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[7b100fc956567454d52d041263e16e7b] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[N2IzMzFhODQ3MGFhZjI1Mjg5ODgzMTE2MmNiNGExMmM.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:11:50 ams_web.go:325: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:11:50 ams_web.go:326: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:11:50 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:29580
+2020/07/14 14:11:50 ams_data.go:101: [INFO] 3000051001 Status: from Logged Out change to Available
+2020/07/14 14:17:30 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 14:17:30 ams_web.go:487: [INFO] http serve gid:  1
+2020/07/14 14:17:46 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:17:46 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:17:14 GMT] Event-Date-Local:[2020-07-14 14:17:14] Event-Date-Timestamp:[1594707434291249] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1262] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[29580] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[1e6a087ad225b288ae2b43179cdb3fb8] sip_auth_method:[REGISTER] sip_auth_nc:[00000003] sip_auth_nonce:[2636a54a-c598-11ea-809c-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[c270df651fbfacc3b3f74d3a58d8b2a4] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[N2IzMzFhODQ3MGFhZjI1Mjg5ODgzMTE2MmNiNGExMmM.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:17:46 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:17:46 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:17:46 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:29580
+2020/07/14 14:17:46 ams_data.go:101: [INFO] 3000051001 Status: from Logged Out change to Available
+2020/07/14 14:17:58 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:17:58 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:17:57 GMT] Event-Date-Local:[2020-07-14 14:17:57] Event-Date-Timestamp:[1594707477670875] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1285] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[24272] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[c8c64161e0356ec5bde066d9942dd529] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[c2a481da-c599-11ea-80c7-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[1694e70ad9ff0881bfe304bafd79ea63] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MzBmOTEzMTg3ZDJlNjgwNTk1Njc1OTlmNzQ5NjFhMzQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:17:58 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:17:58 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:17:58 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:24272
+2020/07/14 14:17:58 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:18:09 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:18:09 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:18:08 GMT] Event-Date-Local:[2020-07-14 14:18:08] Event-Date-Timestamp:[1594707488630536] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1294] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:18:09 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:18:09 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:18:23 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:18:23 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:18:22 GMT] Event-Date-Local:[2020-07-14 14:18:22] Event-Date-Timestamp:[1594707502990415] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1303] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[24272] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[4458be4457b7c9ceb41ccca65292e638] sip_auth_method:[REGISTER] sip_auth_nc:[00000002] sip_auth_nonce:[c2a481da-c599-11ea-80c7-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[5802bdd49a1629e77aa3f5372e84b01f] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MzBmOTEzMTg3ZDJlNjgwNTk1Njc1OTlmNzQ5NjFhMzQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:18:23 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:18:23 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:18:23 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:24272
+2020/07/14 14:18:23 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:18:46 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:18:46 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:18:45 GMT] Event-Date-Local:[2020-07-14 14:18:45] Event-Date-Timestamp:[1594707525490438] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1315] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:18:46 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:18:46 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:18:49 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:18:49 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:18:48 GMT] Event-Date-Local:[2020-07-14 14:18:48] Event-Date-Timestamp:[1594707528270526] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1319] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[24272] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[b204988c1996d8b0c7da6d4c2dc9689d] sip_auth_method:[REGISTER] sip_auth_nc:[00000003] sip_auth_nonce:[c2a481da-c599-11ea-80c7-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[badf59aaf2a083c31d0d76cc2b2ed322] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MzBmOTEzMTg3ZDJlNjgwNTk1Njc1OTlmNzQ5NjFhMzQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:18:49 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:18:49 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:18:49 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:24272
+2020/07/14 14:18:49 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:18:50 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:18:50 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:18:49 GMT] Event-Date-Local:[2020-07-14 14:18:49] Event-Date-Timestamp:[1594707529830770] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1323] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:18:50 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:18:50 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:19:14 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:19:14 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:19:13 GMT] Event-Date-Local:[2020-07-14 14:19:13] Event-Date-Timestamp:[1594707553570973] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1336] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[24272] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[d35d9fc962e4c5540a000fba04be06ba] sip_auth_method:[REGISTER] sip_auth_nc:[00000004] sip_auth_nonce:[c2a481da-c599-11ea-80c7-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[344413c3e1411de053787d91bbded150] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MzBmOTEzMTg3ZDJlNjgwNTk1Njc1OTlmNzQ5NjFhMzQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:19:14 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:19:14 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:19:14 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:24272
+2020/07/14 14:19:14 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:19:20 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:19:20 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:19:19 GMT] Event-Date-Local:[2020-07-14 14:19:19] Event-Date-Timestamp:[1594707559370828] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1342] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:19:20 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:19:20 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:19:39 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:19:39 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:19:38 GMT] Event-Date-Local:[2020-07-14 14:19:38] Event-Date-Timestamp:[1594707578911161] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1352] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[24272] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[f6f214d6947204b5be927ce265dd7f0f] sip_auth_method:[REGISTER] sip_auth_nc:[00000005] sip_auth_nonce:[c2a481da-c599-11ea-80c7-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[8957893876bce28b95c880c4aba063c6] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MzBmOTEzMTg3ZDJlNjgwNTk1Njc1OTlmNzQ5NjFhMzQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:19:39 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:19:39 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:19:39 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:24272
+2020/07/14 14:19:39 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:20:04 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:20:05 ams_web.go:325: [DEBUG] map[Core-UUID:[b8a33d78-c596-11ea-803a-c9a08880e389] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:20:04 GMT] Event-Date-Local:[2020-07-14 14:20:04] Event-Date-Timestamp:[1594707604151071] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1365] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[24272] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[da1750db59e1ed700a52d7918fdfbc04] sip_auth_method:[REGISTER] sip_auth_nc:[00000006] sip_auth_nonce:[c2a481da-c599-11ea-80c7-c9a08880e389] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[ca6ed1b5472728a620d903bb2455385f] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MzBmOTEzMTg3ZDJlNjgwNTk1Njc1OTlmNzQ5NjFhMzQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:20:05 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:20:05 ams_web.go:362: [DEBUG] 
+	<?xml version="1.0" standalone="no"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+	</params>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value=""/>
+	<variable name="accountcode" value=""/>
+	<variable name="user_context" value="default"/>
+	<variable name="directory-exten-visible" value="true"/>
+	<variable name="limit_max" value="15" />
+	<variable name="sip-force-contact" value="NDLB-connectile-dysfunction" />
+	</variables>
+	</user>
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section>
+	</document>
+	
+2020/07/14 14:20:05 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:24272
+2020/07/14 14:20:05 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:21:26 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 14:21:26 ams_web.go:487: [INFO] http serve gid:  1
+2020/07/14 14:21:28 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 14:21:29 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:21:29 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:21:30 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:21:59 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:21:59 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:21:59 GMT] Event-Date-Local:[2020-07-14 14:21:59] Event-Date-Timestamp:[1594707719066071] Event-Name:[REQUEST_PARAMS] Event-Sequence:[506] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[bbcb3ecbf818ba1df7a78a2d69aac666] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[528b0eea-c59a-11ea-ad00-8b25ea3ad92e] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[c8c260f623f34981193ea520bad6dc0f] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:21:59 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:21:59 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:21:59 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 14:21:59 ams_data.go:101: [INFO] 3000051001 Status: from Logged Out change to Available
+2020/07/14 14:22:08 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:22:08 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:22:07 GMT] Event-Date-Local:[2020-07-14 14:22:07] Event-Date-Timestamp:[1594707727645393] Event-Name:[REQUEST_PARAMS] Event-Sequence:[514] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:22:08 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:22:08 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:27:24 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:27:24 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:27:23 GMT] Event-Date-Local:[2020-07-14 14:27:23] Event-Date-Timestamp:[1594708043385421] Event-Name:[REQUEST_PARAMS] Event-Sequence:[650] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[a7444bae5a7974f0bfb9c2c27ec6bd87] sip_auth_method:[REGISTER] sip_auth_nc:[00000002] sip_auth_nonce:[528b0eea-c59a-11ea-ad00-8b25ea3ad92e] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[ca4ca8c75d2e85ccd4a331961e2aee2b] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:27:24 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:27:24 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:27:24 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 14:27:24 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:32:48 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:32:48 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:32:47 GMT] Event-Date-Local:[2020-07-14 14:32:47] Event-Date-Timestamp:[1594708367685811] Event-Name:[REQUEST_PARAMS] Event-Sequence:[788] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[bc7bdb534569f5a234b2ddb64dd33b76] sip_auth_method:[REGISTER] sip_auth_nc:[00000003] sip_auth_nonce:[528b0eea-c59a-11ea-ad00-8b25ea3ad92e] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[5489d283e281e93fc9fc4ed1266bb01e] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:32:48 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:32:48 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:32:48 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 14:32:48 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:38:12 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:38:12 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:38:11 GMT] Event-Date-Local:[2020-07-14 14:38:11] Event-Date-Timestamp:[1594708691985623] Event-Name:[REQUEST_PARAMS] Event-Sequence:[928] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[b51d6ec9c9e91fa3341e90b213592e19] sip_auth_method:[REGISTER] sip_auth_nc:[00000004] sip_auth_nonce:[528b0eea-c59a-11ea-ad00-8b25ea3ad92e] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[8cfa479577f7358d40f15b3ff816b405] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:38:12 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:38:12 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:38:12 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 14:38:12 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:43:37 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:43:37 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:43:36 GMT] Event-Date-Local:[2020-07-14 14:43:36] Event-Date-Timestamp:[1594709016245416] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1068] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[001089cb77827557836faeb71d9b0c72] sip_auth_method:[REGISTER] sip_auth_nc:[00000005] sip_auth_nonce:[528b0eea-c59a-11ea-ad00-8b25ea3ad92e] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[17edb6b55b7f6bff4c0eb5652f007ad2] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:43:37 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:43:37 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:43:37 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 14:43:37 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:49:01 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:49:01 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:49:00 GMT] Event-Date-Local:[2020-07-14 14:49:00] Event-Date-Timestamp:[1594709340505501] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1207] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[5bcf20d7addd91f17051b2db865a459a] sip_auth_method:[REGISTER] sip_auth_nc:[00000006] sip_auth_nonce:[528b0eea-c59a-11ea-ad00-8b25ea3ad92e] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[34dd5253bfc2b94ad3bb068be27a4b5a] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:49:01 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:49:01 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:49:01 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 14:49:01 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:54:25 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:54:25 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:54:24 GMT] Event-Date-Local:[2020-07-14 14:54:24] Event-Date-Timestamp:[1594709664885655] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1347] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[ab05c0b032fdbf4966c1a36872f8178b] sip_auth_method:[REGISTER] sip_auth_nc:[00000007] sip_auth_nonce:[528b0eea-c59a-11ea-ad00-8b25ea3ad92e] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[d30c60e90fe4d39b63301050d4e902c8] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:54:25 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:54:25 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:54:25 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 14:54:25 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:58:45 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:58:45 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:58:44 GMT] Event-Date-Local:[2020-07-14 14:58:44] Event-Date-Timestamp:[1594709924726254] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1461] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:58:45 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:58:45 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:59:49 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:59:49 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:59:48 GMT] Event-Date-Local:[2020-07-14 14:59:48] Event-Date-Timestamp:[1594709988625601] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1492] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051002]]
+2020/07/14 14:59:49 ams_web.go:361: [DEBUG] user [3000051002][1002] auth request accepted
+2020/07/14 14:59:49 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051002@ai-ym.com}${sofia_contact(*/3000051002@ai-ym.com)},${verto_contact(3000051002@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051002">
+	<params>
+	<param name="password" value="1002"/>
+	<param name="vm-password" value="3000051002"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051002"/>
+	<variable name="effective_caller_id_number" value="3000051002"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:59:50 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:59:50 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 06:59:49 GMT] Event-Date-Local:[2020-07-14 14:59:49] Event-Date-Timestamp:[1594709989225334] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1495] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[d67931d339c1d8e25387d79b16febb8c] sip_auth_method:[REGISTER] sip_auth_nc:[00000008] sip_auth_nonce:[528b0eea-c59a-11ea-ad00-8b25ea3ad92e] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[7c7450aad61dcd060a98f88066b9db03] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 14:59:50 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 14:59:50 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:59:50 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 14:59:50 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 14:59:53 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:59:53 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:59:53 GMT] Event-Date-Local:[2020-07-14 14:59:53] Event-Date-Timestamp:[1594709993105968] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1499] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051003]]
+2020/07/14 14:59:53 ams_web.go:361: [DEBUG] user [3000051003][1003] auth request accepted
+2020/07/14 14:59:53 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051003@ai-ym.com}${sofia_contact(*/3000051003@ai-ym.com)},${verto_contact(3000051003@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051003">
+	<params>
+	<param name="password" value="1003"/>
+	<param name="vm-password" value="3000051003"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051003"/>
+	<variable name="effective_caller_id_number" value="3000051003"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 14:59:58 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 14:59:58 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 06:59:57 GMT] Event-Date-Local:[2020-07-14 14:59:57] Event-Date-Timestamp:[1594709997365647] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1505] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051007]]
+2020/07/14 14:59:58 ams_web.go:350: [ERROR] auth request refused because user[3000051007] not exists:
+2020/07/14 15:00:06 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:00:06 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 07:00:06 GMT] Event-Date-Local:[2020-07-14 15:00:06] Event-Date-Timestamp:[1594710006065948] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1511] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051002]]
+2020/07/14 15:00:06 ams_web.go:361: [DEBUG] user [3000051002][1002] auth request accepted
+2020/07/14 15:00:06 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051002@ai-ym.com}${sofia_contact(*/3000051002@ai-ym.com)},${verto_contact(3000051002@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051002">
+	<params>
+	<param name="password" value="1002"/>
+	<param name="vm-password" value="3000051002"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051002"/>
+	<variable name="effective_caller_id_number" value="3000051002"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:05:14 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:05:14 ams_web.go:325: [DEBUG] map[Core-UUID:[4077adbc-c59a-11ea-acfa-8b25ea3ad92e] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 07:05:13 GMT] Event-Date-Local:[2020-07-14 15:05:13] Event-Date-Timestamp:[1594710313645495] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1644] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[d45d30e29feeea8d210cdc6ba3b29ef3] sip_auth_method:[REGISTER] sip_auth_nc:[00000009] sip_auth_nonce:[528b0eea-c59a-11ea-ad00-8b25ea3ad92e] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[0ccd2d509ee370cc4de652104f77a4e8] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:05:14 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 15:05:14 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:05:14 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 15:05:14 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 15:09:40 ams_event_socket.go:170: [ERROR] unsubscribed event  
+2020/07/14 15:09:40 ams_event_socket.go:157: [ERROR] event socket disconnected EOF
+2020/07/14 15:09:42 ams_event_socket.go:135: [ERROR] dial tcp 192.168.71.137:58021: connectex: No connection could be made because the target machine actively refused it.
+2020/07/14 15:09:45 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:09:45 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:09:46 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:09:47 ams_event_socket.go:159: [INFO] event socket connect to FreeSWITCH success
+2020/07/14 15:09:58 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:09:58 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 07:09:57 GMT] Event-Date-Local:[2020-07-14 15:09:57] Event-Date-Timestamp:[1594710597937130] Event-Name:[REQUEST_PARAMS] Event-Sequence:[498] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:09:58 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 15:09:58 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:10:38 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:10:38 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 07:10:37 GMT] Event-Date-Local:[2020-07-14 15:10:37] Event-Date-Timestamp:[1594710637358020] Event-Name:[REQUEST_PARAMS] Event-Sequence:[520] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[192.168.71.137] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[192.168.71.137] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:10:38 ams_web.go:341: [ERROR] auth request refused because domain[192.168.71.137] not exists:
+2020/07/14 15:10:39 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:10:39 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 07:10:38 GMT] Event-Date-Local:[2020-07-14 15:10:38] Event-Date-Timestamp:[1594710638197578] Event-Name:[REQUEST_PARAMS] Event-Sequence:[523] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[fea751f3185b9b32c5c922a6d0e5474d] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[1e79a2cc-c5a1-11ea-bb12-efd19dfce5e8] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[8e2f463c1ac6af6ff75cf0415746b33e] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:10:39 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 15:10:39 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:10:39 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 15:10:39 ams_data.go:104: [WARNING] 3000051001 Status is already Available
+2020/07/14 15:10:48 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:10:48 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 07:10:47 GMT] Event-Date-Local:[2020-07-14 15:10:47] Event-Date-Timestamp:[1594710647837096] Event-Name:[REQUEST_PARAMS] Event-Sequence:[533] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai.efwfdw] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai.efwfdw] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:10:48 ams_web.go:341: [ERROR] auth request refused because domain[ai.efwfdw] not exists:
+2020/07/14 15:11:01 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:11:01 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 07:11:00 GMT] Event-Date-Local:[2020-07-14 15:11:00] Event-Date-Timestamp:[1594710660717733] Event-Name:[REQUEST_PARAMS] Event-Sequence:[541] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com1] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com1] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:11:01 ams_web.go:341: [ERROR] auth request refused because domain[ai-ym.com1] not exists:
+2020/07/14 15:11:05 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:11:05 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 07:11:04 GMT] Event-Date-Local:[2020-07-14 15:11:04] Event-Date-Timestamp:[1594710664597119] Event-Name:[REQUEST_PARAMS] Event-Sequence:[545] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:11:05 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 15:11:05 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:11:37 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:11:37 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 07:11:37 GMT] Event-Date-Local:[2020-07-14 15:11:37] Event-Date-Timestamp:[1594710697077157] Event-Name:[REQUEST_PARAMS] Event-Sequence:[560] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[57590] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[9d54eb485b4778e2d5f9a93284f6b9c1] sip_auth_method:[REGISTER] sip_auth_nc:[00000002] sip_auth_nonce:[1e79a2cc-c5a1-11ea-bb12-efd19dfce5e8] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[e46d7f3ef01d90bca694236c4a9ae46f] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[MTFkNGQ3YzA0YjM1MzgyYjhmMzE4MTNlOTFkMDczNGQ.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:11:37 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 15:11:37 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:11:38 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:11:38 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 07:11:37 GMT] Event-Date-Local:[2020-07-14 15:11:37] Event-Date-Timestamp:[1594710697517000] Event-Name:[REQUEST_PARAMS] Event-Sequence:[565] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[18136] domain:[192.168.71.137] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[192.168.71.137] section:[directory] sip_auth_cnonce:[e178d5b0f454b87e57828b65b4707921] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[41d68956-c5a1-11ea-bb1f-efd19dfce5e8] sip_auth_qop:[auth] sip_auth_realm:[192.168.71.137] sip_auth_response:[869a69fb630c92e323649a4b648be18c] sip_auth_uri:[sip:192.168.71.137:56060] sip_auth_username:[1003] sip_call_id:[ZTE1OTliZGU1ZWIwMTMyZjE1NjFkMjM3YWRlZDFmZmI.] sip_contact_host:[192.168.71.1] sip_contact_user:[1003] sip_from_host:[192.168.71.137] sip_from_port:[56060] sip_from_user:[1003] sip_profile:[internal] sip_request_host:[192.168.71.137] sip_request_port:[56060] sip_to_host:[192.168.71.137] sip_to_port:[56060] sip_to_user:[1003] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[1003]]
+2020/07/14 15:11:38 ams_web.go:341: [ERROR] auth request refused because domain[192.168.71.137] not exists:
+2020/07/14 15:11:38 ams_event_socket.go:61: [DEBUG] recv [CUSTOM sofia::unregister] 3000051001@ai-ym.com from 192.168.71.1:57590
+2020/07/14 15:11:38 ams_data.go:101: [INFO] 3000051001 Status: from Available change to Logged Out
+2020/07/14 15:12:50 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:12:50 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 07:12:49 GMT] Event-Date-Local:[2020-07-14 15:12:49] Event-Date-Timestamp:[1594710769776980] Event-Name:[REQUEST_PARAMS] Event-Sequence:[601] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[63640] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[3d6b6efe3e608434ac916ac92aecc9a9] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[6ce4c342-c5a1-11ea-bb21-efd19dfce5e8] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[ba28e529e8e44112a9d31ea452e2990b] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[YWUzZTkxZjUxOGMyNDJkNTkyYTY5NjhlMTY3ODAxMmY.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:12:50 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 15:12:50 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:12:50 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051001@ai-ym.com from 192.168.71.1:63640
+2020/07/14 15:12:50 ams_data.go:101: [INFO] 3000051001 Status: from Logged Out change to Available
+2020/07/14 15:12:59 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:12:59 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 07:12:58 GMT] Event-Date-Local:[2020-07-14 15:12:58] Event-Date-Timestamp:[1594710778797599] Event-Name:[REQUEST_PARAMS] Event-Sequence:[608] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[63640] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[f94b995468e661c6e8ad864dd13069b3] sip_auth_method:[REGISTER] sip_auth_nc:[00000002] sip_auth_nonce:[6ce4c342-c5a1-11ea-bb21-efd19dfce5e8] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[aa19b061a96f02bdf28ae355d01f3058] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051001] sip_call_id:[YWUzZTkxZjUxOGMyNDJkNTkyYTY5NjhlMTY3ODAxMmY.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051001] sip_from_host:[ai-ym.com] sip_from_user:[3000051001] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051001] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051001]]
+2020/07/14 15:12:59 ams_web.go:361: [DEBUG] user [3000051001][1001] auth request accepted
+2020/07/14 15:12:59 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051001@ai-ym.com}${sofia_contact(*/3000051001@ai-ym.com)},${verto_contact(3000051001@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051001">
+	<params>
+	<param name="password" value="1001"/>
+	<param name="vm-password" value="3000051001"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051001"/>
+	<variable name="effective_caller_id_number" value="3000051001"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:12:59 ams_event_socket.go:61: [DEBUG] recv [CUSTOM sofia::unregister] 3000051001@ai-ym.com from 192.168.71.1:63640
+2020/07/14 15:12:59 ams_data.go:101: [INFO] 3000051001 Status: from Available change to Logged Out
+2020/07/14 15:12:59 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:12:59 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 07:12:59 GMT] Event-Date-Local:[2020-07-14 15:12:59] Event-Date-Timestamp:[1594710779017182] Event-Name:[REQUEST_PARAMS] Event-Sequence:[613] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[37870] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[a08adaefe3fafb05f954944c2b985de1] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[7269c59c-c5a1-11ea-bb24-efd19dfce5e8] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[b8d8efd8975cefa39817a5d4d6e1c612] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051002] sip_call_id:[YTBjYmRkOTM3YTljMzE0YjcwYThiYjQ1OTQ2NTEyZjk.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051002] sip_from_host:[ai-ym.com] sip_from_user:[3000051002] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051002] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051002]]
+2020/07/14 15:12:59 ams_web.go:361: [DEBUG] user [3000051002][1002] auth request accepted
+2020/07/14 15:12:59 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051002@ai-ym.com}${sofia_contact(*/3000051002@ai-ym.com)},${verto_contact(3000051002@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051002">
+	<params>
+	<param name="password" value="1002"/>
+	<param name="vm-password" value="3000051002"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051002"/>
+	<variable name="effective_caller_id_number" value="3000051002"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:12:59 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051002@ai-ym.com from 192.168.71.1:37870
+2020/07/14 15:12:59 ams_data.go:101: [INFO] 3000051002 Status: from Logged Out change to Available
+2020/07/14 15:13:05 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:13:05 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 07:13:04 GMT] Event-Date-Local:[2020-07-14 15:13:04] Event-Date-Timestamp:[1594710784217634] Event-Name:[REQUEST_PARAMS] Event-Sequence:[621] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051002]]
+2020/07/14 15:13:05 ams_web.go:361: [DEBUG] user [3000051002][1002] auth request accepted
+2020/07/14 15:13:05 ams_web.go:362: [DEBUG] 
+	<?xml version=\"1.0\" standalone=\"no\"?>
+	<document type="freeswitch/xml">
+	<section name="directory">
+	<domain name="ai-ym.com">
+	<params>
+	<param name="dial-string" value="{^^:sip_invite_domain=ai-ym.com:presence_id=3000051002@ai-ym.com}${sofia_contact(*/3000051002@ai-ym.com)},${verto_contact(3000051002@ai-ym.com)}"/>
+	<param name="jsonrpc-allowed-methods" value="verto"/>
+	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
+	</params>
+	<variables>
+	<variable name="record_stereo" value="true"/>
+	<variable name="default_gateway" value="ai-ym.com"/>
+	<variable name="default_areacode" value="ai-ym.com"/>
+	<variable name="transfer_fallback_usernamesion" value="operator"/>
+	</variables>
+	<groups>
+	<group name="g1">
+	<users>
+	<user id="3000051002">
+	<params>
+	<param name="password" value="1002"/>
+	<param name="vm-password" value="3000051002"/>
+	</params>
+	<variables>
+	<variable name="toll_allow" value="domestic,international,local"/>
+	<variable name="accountcode" value="86"/>
+	<variable name="user_context" value="default"/>
+	<variable name="effective_caller_id_name" value="Extension 3000051002"/>
+	<variable name="effective_caller_id_number" value="3000051002"/>
+	<variable name="outbound_caller_id_name" value="FS callcenter"/>
+	<variable name="outbound_caller_id_number" value="8888"/>
+	<variable name="callgroup" value="g1"/>
+	</variables>
+	</user>  
+	</users>
+	</group>
+	</groups>
+	</domain>
+	</section> 
+	</document>
+	
+2020/07/14 15:13:24 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/14 15:13:24 ams_web.go:487: [INFO] http serve gid:  1
+2020/07/14 15:13:31 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/14 15:13:31 ams_web.go:325: [DEBUG] map[Core-UUID:[fe867d78-c5a0-11ea-bb04-efd19dfce5e8] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 07:13:30 GMT] Event-Date-Local:[2020-07-14 15:13:30] Event-Date-Timestamp:[1594710810757709] Event-Name:[REQUEST_PARAMS] Event-Sequence:[637] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051002]]
+2020/07/14 15:13:31 ams_web.go:361: [DEBUG] user [3000051002][1002] auth request accepted
+2020/07/15 09:29:01 ams_db.go:94: [INFO] Successfully connected database!
+2020/07/15 09:29:02 ams_web.go:487: [INFO] http serve gid:  1
+2020/07/15 09:31:34 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/15 09:31:34 ams_web.go:325: [DEBUG] map[Core-UUID:[8a328df0-c5e0-11ea-98b6-455cb0e31139] Event-Calling-File:[sofia_reg.c] Event-Calling-Function:[sofia_reg_parse_auth] Event-Calling-Line-Number:[2843] Event-Date-GMT:[Tue, 14 Jul 2020 15:04:06 GMT] Event-Date-Local:[2020-07-14 23:04:06] Event-Date-Timestamp:[1594739046535000] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1097] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[sip_auth] client_port:[4510] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] ip:[192.168.71.1] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] sip_auth_cnonce:[fedfb19de89c22f609816b5122a2d640] sip_auth_method:[REGISTER] sip_auth_nc:[00000001] sip_auth_nonce:[ea647684-c63a-11ea-98d6-455cb0e31139] sip_auth_qop:[auth] sip_auth_realm:[ai-ym.com] sip_auth_response:[2d02d85c7730ea1ec58d2d82ea315f09] sip_auth_uri:[sip:ai-ym.com] sip_auth_username:[3000051002] sip_call_id:[YzI2NTE3YzYwMjZlMWEzYWE5MDU5MmU1YTQwNzY4NWE.] sip_contact_host:[192.168.71.1] sip_contact_user:[3000051002] sip_from_host:[ai-ym.com] sip_from_user:[3000051002] sip_profile:[internal] sip_request_host:[ai-ym.com] sip_to_host:[ai-ym.com] sip_to_user:[3000051002] sip_user_agent:[eyeBeam release 1011d stamp 40820] sip_via_protocol:[udp] tag_name:[domain] user:[3000051002]]
+2020/07/15 09:31:34 ams_web.go:361: [DEBUG] user [3000051002][1002] auth request accepted
+2020/07/15 09:31:34 ams_event_socket.go:50: [INFO] recv [CUSTOM sofia::register] 3000051002@ai-ym.com from 192.168.71.1:4510
+2020/07/15 09:31:34 ams_data.go:101: [INFO] 3000051002 Status: from Logged Out change to Available
+2020/07/15 09:31:50 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/15 09:31:50 ams_web.go:325: [DEBUG] map[Core-UUID:[8a328df0-c5e0-11ea-98b6-455cb0e31139] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 15:04:22 GMT] Event-Date-Local:[2020-07-14 23:04:22] Event-Date-Timestamp:[1594739062634914] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1111] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051002]]
+2020/07/15 09:31:50 ams_web.go:361: [DEBUG] user [3000051002][1002] auth request accepted
+2020/07/15 09:32:34 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/15 09:32:34 ams_web.go:325: [DEBUG] map[Core-UUID:[8a328df0-c5e0-11ea-98b6-455cb0e31139] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 15:05:06 GMT] Event-Date-Local:[2020-07-14 23:05:06] Event-Date-Timestamp:[1594739106834889] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1132] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051009]]
+2020/07/15 09:32:34 ams_web.go:350: [ERROR] auth request refused because user[3000051009] not exists:
+2020/07/15 09:34:05 ams_web.go:286: [DEBUG] recv auth request /v1/voip/ams/auth
+2020/07/15 09:34:05 ams_web.go:325: [DEBUG] map[Core-UUID:[8a328df0-c5e0-11ea-98b6-455cb0e31139] Event-Calling-File:[mod_dptools.c] Event-Calling-Function:[user_outgoing_channel] Event-Calling-Line-Number:[4362] Event-Date-GMT:[Tue, 14 Jul 2020 15:06:38 GMT] Event-Date-Local:[2020-07-14 23:06:38] Event-Date-Timestamp:[1594739198235177] Event-Name:[REQUEST_PARAMS] Event-Sequence:[1174] FreeSWITCH-Hostname:[fsa] FreeSWITCH-IPv4:[192.168.71.137] FreeSWITCH-IPv6:[::1] FreeSWITCH-Switchname:[docker.hlr.192.168.71.137.58021] action:[user_call] as_channel:[true] domain:[ai-ym.com] hostname:[docker.hlr.192.168.71.137.58021] key:[id] key_name:[name] key_value:[ai-ym.com] section:[directory] tag_name:[domain] user:[3000051002]]
+2020/07/15 09:34:05 ams_web.go:361: [DEBUG] user [3000051002][1002] auth request accepted
+2020/07/15 09:55:00 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051002@ai-ym.com
+2020/07/15 09:55:00 ams_data.go:157: [INFO] 3000051002 talking from false to true
+2020/07/15 09:55:00 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051002@ai-ym.com
+2020/07/15 09:55:00 ams_data.go:157: [INFO] 3000051002 talking from true to false
+2020/07/15 09:56:02 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051002@ai-ym.com
+2020/07/15 09:56:02 ams_data.go:157: [INFO] 3000051002 talking from false to true
+2020/07/15 09:56:11 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051002@ai-ym.com
+2020/07/15 09:56:11 ams_data.go:157: [INFO] 3000051002 talking from true to false
+2020/07/15 09:56:15 ams_event_socket.go:17: [DEBUG] recv [CHANNEL_CREATE] Channel-Presence-Id: 3000051002@ai-ym.com
+2020/07/15 09:56:15 ams_data.go:157: [INFO] 3000051002 talking from false to true
+2020/07/15 09:56:20 ams_event_socket.go:33: [DEBUG] recv [CHANNEL_DESTROY] Channel-Presence-Id: 3000051002@ai-ym.com
+2020/07/15 09:56:20 ams_data.go:157: [INFO] 3000051002 talking from true to false
