@@ -48,11 +48,16 @@ var insertDomainSQL string = "INSERT INTO ams_domain(name,tenant_id,company,enab
 var insertGroupSQL string = "INSERT INTO ams_group(name,group_desc,parent_id,domain_id) VALUES('%s','%s','%d','%d') RETURNING id"
 var insertUserSQL string = "INSERT INTO ams_user(username,password,group_id) VALUES('%s','%s','%d') RETURNING id"
 
-var selectEnabledUsersSQL string = "select u.id,u.username,u.password,u.group_id from ams_user as u left join ams_group as g on u.group_id=g.id where g.domain_id=%d;"
-var selectEnabledDomainsSQL string = "SELECT id,name,tenant_id,company FROM ams_domain where enable=true"
 var selectDomainSQL string = "SELECT id,name,tenant_id,company,enable FROM ams_domain where id=%s"
 var selectGroupSQL string = "SELECT id,name,group_desc,parent_id,domain_id FROM ams_group where id=%s"
 var selectUserSQL string = "SELECT id,username,password,group_id FROM ams_user where id=%s"
+
+var selectEnabledUsersSQL string = "select u.id,u.username,u.password,u.group_id from ams_user as u left join ams_group as g on u.group_id=g.id where g.domain_id=%d;"
+var selectEnabledDomainsSQL string = "SELECT id,name,tenant_id,company FROM ams_domain where enable=true"
+
+var selectDomainIDByNameSQL string = "SELECT id FROM ams_domain WHERE name=%s"
+
+var selectRealmByIDSQL string = "SELECT name FROM ams_domain WHERE id=%s"
 
 /*
 var updateDomainSQL string = "UPDATE ams_domain SET name='%s',tenant_id=%d,company='%s',enable=%t where id=%d"
@@ -124,8 +129,8 @@ func (c *AppConnector) execSQL(SQL string, args ...interface{}) error {
 }
 
 //insertSQL 执行sql插入语句 获取自增id
-func (c *AppConnector) insertSQL(SQL string, args ...interface{}) (int64, error) {
-	var id int64
+func (c *AppConnector) insertSQL(SQL string, args ...interface{}) (int, error) {
+	var id int
 	insertSQL := fmt.Sprintf(SQL, args...)
 	err := c.dbConn.QueryRow(insertSQL).Scan(&id)
 	if err != nil {
@@ -151,7 +156,7 @@ func (c *AppConnector) CreateTable() {
 }
 
 //InsertDomain 插入一条域数据
-func (c *AppConnector) InsertDomain(name string, tenantID int, company string, enable string) (int64, error) {
+func (c *AppConnector) InsertDomain(name string, tenantID int, company string, enable string) (int, error) {
 	id, err := c.insertSQL(insertDomainSQL, name, tenantID, company, enable)
 	if err != nil {
 		Error.Println(err)
@@ -161,7 +166,7 @@ func (c *AppConnector) InsertDomain(name string, tenantID int, company string, e
 }
 
 //InsertGroup 插入一条组数据
-func (c *AppConnector) InsertGroup(name string, desc string, parentID int, domainID int) (int64, error) {
+func (c *AppConnector) InsertGroup(name string, desc string, parentID int, domainID int) (int, error) {
 	id, err := c.insertSQL(insertGroupSQL, name, desc, parentID, domainID)
 	if err != nil {
 		Error.Println(err)
@@ -171,7 +176,7 @@ func (c *AppConnector) InsertGroup(name string, desc string, parentID int, domai
 }
 
 //InsertUser 插入一条号码数据
-func (c *AppConnector) InsertUser(user string, password string, groupID int) (int64, error) {
+func (c *AppConnector) InsertUser(user string, password string, groupID int) (int, error) {
 	id, err := c.insertSQL(insertUserSQL, user, password, groupID)
 	if err != nil {
 		Error.Println(err)
@@ -308,4 +313,44 @@ func (c *AppConnector) DeleteUser(userID int) error {
 		return err
 	}
 	return nil
+}
+
+//GetDomainIDByName 通过name查询Domain的ID
+func (c *AppConnector) GetDomainIDByName(name string) (id int) {
+	queryStr := fmt.Sprintf(selectDomainIDByNameSQL, name)
+	rows, err := c.dbConn.Query(queryStr)
+
+	if err != nil {
+		Error.Println("GetDomainIDByName db query error:", err)
+		return 0
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		err := rows.Scan(&id)
+		if err != nil {
+			Error.Println(err)
+		}
+	}
+	return id
+}
+
+//GetDomainByID 通过ID获取domain的realm
+func (c *AppConnector) GetDomainByID(id int) (realm string) {
+	queryStr := fmt.Sprintf(selectRealmByIDSQL, id)
+	rows, err := c.dbConn.Query(queryStr)
+
+	if err != nil {
+		Error.Println("GetDomainByID db query error:", err)
+		return ""
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		err := rows.Scan(&realm)
+		if err != nil {
+			Error.Println(err)
+		}
+	}
+	return realm
 }

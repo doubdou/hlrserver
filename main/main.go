@@ -33,7 +33,7 @@ func main() {
 		return
 	}
 
-	ams.LoadAllDataFromDB()
+	ams.ReloadAllData()
 
 	eslConf := ams.EventsocketConfigGet()
 	eslAddr := fmt.Sprintf("%s:%s", eslConf.Host, eslConf.Port)

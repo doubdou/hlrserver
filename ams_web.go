@@ -9,6 +9,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strconv"
+	"strings"
 	"sync"
 	"time"
 
@@ -80,10 +82,20 @@ func exitFromWaitingAgents(groupID int) int {
 func domainGet(w http.ResponseWriter, r *http.Request) {
 	buf, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		Error.Println("domainGet:", err)
+		respErrorMessage(w, codeBodyReadFailed)
+		return
 	}
-	Error.Println(r.RequestURI, r.Method, string(buf))
-	w.Write(buf)
+	if len(buf) == 0 {
+		respErrorMessage(w, codeBodyEmpty)
+		return
+	}
+	req := domainJSONRequest{}
+	err = json.Unmarshal(buf, &req)
+	if err != nil {
+		respErrorMessage(w, codeBodyParsingFailed)
+		return
+	}
+	return
 }
 
 func domainModify(w http.ResponseWriter, r *http.Request) {
@@ -91,36 +103,32 @@ func domainModify(w http.ResponseWriter, r *http.Request) {
 	id := vars["id"]
 	buf, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		fmt.Fprintf(w, errorMessage(codeBodyReadFailed))
+		respErrorMessage(w, codeBodyReadFailed)
 		return
 	}
 	if len(buf) == 0 {
-		fmt.Fprintf(w, errorMessage(codeBodyEmpty))
+		respErrorMessage(w, codeBodyEmpty)
 		return
 	}
 	req := domainJSONRequest{}
 	err = json.Unmarshal(buf, &req)
 	if err != nil {
-		fmt.Fprintf(w, errorMessage(codeBodyParsingFailed))
+		respErrorMessage(w, codeBodyParsingFailed)
 		return
 	}
-	// debug start
-	Error.Println(string(buf), "---json Unmarshal---", req)
-	//debug end
-	//域不存在
 	if req.Name == "" {
-		fmt.Fprintf(w, errorMessage(codeDomainNotFound))
+		respErrorMessage(w, codeDomainNotFound)
 		return
 	}
 	db, err := GetDBConnector()
 	if err != nil {
-		fmt.Fprintf(w, errorMessage(codeDatabaseConnectFailed))
+		respErrorMessage(w, codeDatabaseConnectFailed)
 		Error.Println("domainModify getDBDriver fail", err)
 		return
 	}
 	domainInfo, err := db.ReadDomain(id)
 	if err != nil {
-		fmt.Fprintf(w, errorMessage(codeDomainNotFound))
+		respErrorMessage(w, codeDomainNotFound)
 		Error.Println("domainModify ReadDomain ", id, err)
 		return
 	}
@@ -137,28 +145,120 @@ func domainModify(w http.ResponseWriter, r *http.Request) {
 	if req.Enable != domainInfo.Enable {
 		domainInfo.Enable = req.Enable
 	}
-	//检查租户ID是否重复
-	//主要在于是否允许一个租户拥有多个域
-
+	//检查域名重复
+	thisID := db.GetDomainIDByName(req.Name)
+	if thisID != 0 {
+		respErrorMessage(w, codeDomainExists)
+		Error.Println("domainModify fail: domain exists:", req.Name)
+		return
+	}
 	err = db.UpdateDomain(domainInfo)
 	if err != nil {
-		fmt.Fprintf(w, errorMessage(codeSQLExecutionFailed))
+		respErrorMessage(w, codeSQLExecutionFailed)
 		return
 	}
 }
 
 func domainDelete(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	idStr := vars["id"]
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		respErrorMessage(w, codeRequestIDInvalid)
+		Error.Println("domainDelete fail", err)
+		return
+	}
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("domainDelete getDBDriver fail", err)
+		return
+	}
+	realm := db.GetDomainByID(id)
+	//从内存中释放
+	domain := locateDomainAndLock(realm)
+	if domain == nil {
+		respErrorMessage(w, codeDomainNotFound)
+		Error.Println("domainDelete fail: domain not found")
+		return
+	}
+	if domain.agentCount > 0 {
+		respErrorMessage(w, codeDomainInUse)
+		Error.Println("domainDelete fail: domain in use")
+		domain.Unlock()
+		return
+	}
+	deleteDomainData(realm)
+	//删除数据库记录
+	err = db.DeleteDomain(id)
+	if err != nil {
+		respErrorMessage(w, codeSQLExecutionFailed)
+		Error.Println("domainDelete fail: SQL execute failed:", err)
+		domain.Unlock()
+		return
+	}
 }
 
 // domain 处理POST请求，添加域
 func domainAdd(w http.ResponseWriter, r *http.Request) {
+	//1) 必选项检查
+	//2) 检查domain名字的合法性(暂无)
+	//3) 检查域是否已存在
+	//4) 如果添加的域默认是无效的(enable=0)则无需在内存中创建.
 	buf, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		Error.Println("domainGet:", err)
+		respErrorMessage(w, codeBodyReadFailed)
+		return
 	}
-	time.Sleep(3 * time.Second)
-	Error.Println(r.RequestURI, r.Method, string(buf))
-	w.Write(buf)
+	if len(buf) == 0 {
+		respErrorMessage(w, codeBodyEmpty)
+		return
+	}
+	req := domainJSONRequest{}
+	err = json.Unmarshal(buf, &req)
+	if err != nil {
+		respErrorMessage(w, codeBodyParsingFailed)
+		return
+	}
+
+	if req.Name == "" || req.TenantID == 0 || req.Enable == "" {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("domainAdd fail: missing required parameter")
+		return
+	}
+	if req.Enable != "true" && req.Enable != "false" {
+		respErrorMessage(w, codeParamValueInvalid)
+		Error.Println("domainAdd fail: enable value can only be true or false")
+		return
+	}
+
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("domainAdd getDBDriver fail", err)
+		return
+	}
+	id := db.GetDomainIDByName(req.Name)
+	if id != 0 {
+		respErrorMessage(w, codeDomainExists)
+		Error.Println("domainAdd fail: domain exists")
+		return
+	}
+	newID, err := db.InsertDomain(req.Name, req.TenantID, req.Company, req.Enable)
+	if err != nil {
+		respErrorMessage(w, codeSQLExecutionFailed)
+		Error.Println("domainAdd fail:", err)
+		return
+	}
+
+	fmt.Fprintf(w, respOKMessage(newID))
+	if req.Enable == "true" {
+		//加载到内存
+		domain := locateDomainAndLock(req.Name)
+		reloadDomain(domain)
+		domain.Unlock()
+	}
+	return
 }
 
 func groupGet(w http.ResponseWriter, r *http.Request) {
@@ -253,15 +353,13 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
 		Error.Println("number auth, pase form fail", err)
-		w.WriteHeader(400)
-		fmt.Fprintf(w, errorMessage(codeBadRequest))
+		respErrorMessage(w, codeBadRequest)
 		return
 	}
 	eventNameArr := r.PostForm["Event-Name"]
 	if len(eventNameArr) != 1 {
 		Error.Println("number auth bad request:event-name not found")
-		w.WriteHeader(400)
-		fmt.Fprintf(w, errorMessage(codeBadRequest))
+		respErrorMessage(w, codeBadRequest)
 		return
 	}
 
@@ -276,16 +374,28 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 		}
 		if actionArr[0] != "sip_auth" && actionArr[0] != "jsonrpc-authenticate" && actionArr[0] != "user_call" {
 			Error.Printf("number auth bad request:event-name:%s action:%s", eventNameArr[0], actionArr[0])
-			w.WriteHeader(400)
-			fmt.Fprintf(w, errorMessage(codeBadRequest))
+			respErrorMessage(w, codeBadRequest)
 			return
 		}
+	}
+	//如果鉴权请求来自陌生主机，拒绝
+	pos := strings.Index(r.RemoteAddr, ":")
+	if pos < 0 {
+		Error.Println("remote address parsing error:", r.RemoteAddr)
+		respErrorMessage(w, codeRequestRefused)
+		return
+	}
+	fsAddr := r.RemoteAddr[:pos]
+	if fsAddr != EventsocketConfigGet().Host {
+		Error.Println("The authentication request comes from unconfigured host: ", fsAddr)
+		respErrorMessage(w, codeRequestRefused)
+		return
 	}
 	// authtype := r.PostForm["action"]
 	// if len(authtype) != 1 {
 	// 	Error.Println("auth request refused because authtype not found")
 	// 	w.WriteHeader(400)
-	// 	fmt.Fprintf(w, errorMessage(codeBadRequest))
+	// 	respErrorMessage(codeBadRequest))
 	// 	return
 	// }
 	Debug.Println(r.PostForm)
@@ -293,8 +403,7 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	domainArr := r.PostForm["domain"]
 	if len(userArr) != 1 || len(domainArr) != 1 {
 		Error.Println("number auth fail: bad request ", userArr, domainArr)
-		w.WriteHeader(400)
-		fmt.Fprintf(w, errorMessage(codeBadRequest))
+		respErrorMessage(w, codeBadRequest)
 		return
 	}
 
@@ -305,8 +414,7 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	thisDomain := amsDataManage.mapping[domainStr]
 	if thisDomain == nil {
 		Error.Printf("auth request refused because domain[%s] not exists:", domainStr)
-		w.WriteHeader(400)
-		fmt.Fprintf(w, errorMessage(codeBadRequest))
+		respErrorMessage(w, codeBadRequest)
 		return
 	}
 
@@ -314,8 +422,7 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	thisUser := thisDomain.mapping[userStr]
 	if thisUser == nil {
 		Error.Printf("auth request refused because user[%s] not exists:", userStr)
-		w.WriteHeader(400)
-		fmt.Fprintf(w, errorMessage(codeBadRequest))
+		respErrorMessage(w, codeBadRequest)
 		thisDomain.RUnlock()
 		return
 	}
@@ -326,6 +433,44 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	Debug.Printf("user [%s][%s] auth request accepted", thisUser.Username, thisUser.Password)
 	// Debug.Println(res)
 	w.Write([]byte(res))
+}
+
+func agentStateHandler(w http.ResponseWriter, r *http.Request) {
+	// vars := mux.Vars(r)
+	// userID := vars["id"]
+	buf, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		respErrorMessage(w, codeBodyReadFailed)
+		return
+	}
+	if len(buf) == 0 {
+		respErrorMessage(w, codeBodyEmpty)
+		return
+	}
+	req := agentStateRequest{}
+	err = json.Unmarshal(buf, &req)
+	if err != nil {
+		respErrorMessage(w, codeBodyParsingFailed)
+		return
+	}
+
+	if req.Realm == "" || req.username == "" || req.State == "" {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("agentState handle fail: missing required parameter")
+		return
+	}
+	//坐席自己能切换的只有idle状态和waiting状态
+	if req.State != StateIdle && req.State != StateWaiting {
+		respErrorMessage(w, codeRequestRefused)
+		Error.Println("agentState handle fail: request is refused")
+		return
+	}
+	err = userStateSet(req.username, req.Realm, req.State)
+	if err != nil {
+		respErrorMessage(w, codeRequestRefused)
+		Error.Println("agentState handle fail: request is refused")
+		return
+	}
 }
 
 /*
@@ -382,14 +527,14 @@ ERR:
 func (srv *WebServer) amsHTTPSubFunc(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		Error.Println("sub directory not support POST method")
-		fmt.Fprintf(w, errorMessage(codeBadRequestMethod))
+		respErrorMessage(w, codeBadRequestMethod)
 		return
 	}
 	vars := mux.Vars(r)
 	v := vars["category"]
 	handler := srv.httpHandlerMap[v][r.Method]
 	if handler == nil {
-		fmt.Fprintf(w, errorMessage(codeBadRequestForm))
+		respErrorMessage(w, codeBadRequestForm)
 		return
 	}
 	handler.(func(http.ResponseWriter, *http.Request))(w, r)
@@ -400,7 +545,7 @@ func (srv *WebServer) amsHTTPFunc(w http.ResponseWriter, r *http.Request) {
 	v := vars["category"]
 	handler := srv.httpHandlerMap[v][r.Method]
 	if handler == nil {
-		fmt.Fprintf(w, v, errorMessage(codeBadRequestForm))
+		respErrorMessage(w, codeBadRequestForm)
 		return
 	}
 	handler.(func(http.ResponseWriter, *http.Request))(w, r)
@@ -431,9 +576,10 @@ func NewWebServer() *WebServer {
 	//号码鉴权
 	handlers["auth"] = make(map[string]interface{})
 	handlers["auth"]["POST"] = numberAuth
-	//获取空闲坐席
+	//坐席状态管理 (获取空闲坐席、坐席状态切换)
 	handlers["agent"] = make(map[string]interface{})
 	handlers["agent"]["GET"] = agentHandler
+	handlers["agent"]["PUT"] = agentStateHandler
 	//生成web服务实例
 	server.httpHandlerMap = handlers
 	return &server
@@ -442,7 +588,7 @@ func NewWebServer() *WebServer {
 //Serve web服务启动入口
 func (srv *WebServer) Serve(addr string) error {
 	if srv == nil {
-		return errors.New("wbserver is null")
+		return errors.New("webserver is null")
 	}
 	//路由绑定
 	r := mux.NewRouter()

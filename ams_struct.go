@@ -70,12 +70,13 @@ type UserCompleteInfo struct {
 }
 
 //DomainManage 管理域内的所有用户信息
-//key: 域名称
+//key: 域ID
 //value: 属于该域的用户信息
 type DomainManage struct {
 	*sync.RWMutex
 	*DomainInfo
-	mapping map[string]*UserCompleteInfo
+	agentCount int
+	mapping    map[string]*UserCompleteInfo
 }
 
 /*********************************************** 处理HTTP请求的相关JSON结构 *********************************************************/
@@ -87,22 +88,12 @@ type domainJSONRequest struct {
 	Enable   string `json:"enable"`
 }
 
-//domain的http响应消息
-type domainJSONResponse struct {
-	ID int `json:"id"`
-}
-
 //group的http请求消息
 type groupJSONRequest struct {
 	Name      string `json:"name"`
 	GroupDesc string `json:"group_desc"`
 	ParentID  int    `json:"parent_id"`
 	DomainID  int    `json:"domain_id"`
-}
-
-//group的http响应消息
-type groupJSONResponse struct {
-	ID int `json:"id"`
 }
 
 //user的http请求消息
@@ -114,9 +105,10 @@ type userJSONRequest struct {
 	State    string `json:"state"`
 }
 
-//user的http响应消息
-type userJSONResponse struct {
-	ID int `json:"id"`
+type agentStateRequest struct {
+	Realm    string         `json:"realm"`
+	username string         `json:"username"`
+	State    agentStateType `json:"state"`
 }
 
 //agent的http请求消息
@@ -132,11 +124,11 @@ type agentJSONResponse struct {
 	SwitchName string `json:"switch_name"`
 }
 
-//auth的http请求信息（不完整）
-type authXMLRequest struct {
-	User   string `xml:"user"`
-	Domain string `xml:"domain"`
-}
+// //auth的http请求信息（不完整）
+// type authXMLRequest struct {
+// 	User   string `xml:"user"`
+// 	Domain string `xml:"domain"`
+// }
 
 /*********************************************** 通用管理函数、调试函数 *********************************************************/
 

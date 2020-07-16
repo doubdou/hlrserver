@@ -3,11 +3,18 @@ package ams
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
 )
 
 type reason int
 
-type httpRespDesc struct {
+//http请求正确返回
+type httpOKRespDesc struct {
+	ID int `json:"id"`
+}
+
+//http请求错误返回
+type httpErrRespDesc struct {
 	Code    reason `json:"code"`
 	Message string `json:"message"`
 }
@@ -15,21 +22,30 @@ type httpRespDesc struct {
 const (
 	codeSuccess reason = 0
 	/*********ams内部定义错误状态码****************************/
-	//http请求问题
-	codeBodyEmpty         reason = 101
-	codeLackOfParams      reason = 102
-	codeBadRequestForm    reason = 103
-	codeBadRequestMethod  reason = 104
-	codeBodyParsingFailed reason = 105
-	//数据不符
-	codeDomainNotFound reason = 201
-	codeGroupNotFound  reason = 202
-	codeUserNotFound   reason = 203
-	codeDomainExists   reason = 204
-	codeGroupExists    reason = 205
-	codeUserExists     reason = 206
-	codeDomainDisabled reason = 207
-	//服务端内部问题
+	//http请求原因
+	codeBodyEmpty             reason = 101
+	codeLackOfParams          reason = 102
+	codeBadRequestForm        reason = 103
+	codeBadRequestMethod      reason = 104
+	codeBodyParsingFailed     reason = 105
+	codeMissingRequiredParams reason = 106
+	codeRequestRefused        reason = 107
+	codeRequestIDInvalid      reason = 108
+
+	//数据原因
+	codeDomainNotFound    reason = 201
+	codeGroupNotFound     reason = 202
+	codeUserNotFound      reason = 203
+	codeDomainExists      reason = 204
+	codeGroupExists       reason = 205
+	codeUserExists        reason = 206
+	codeStateChangeFailed reason = 207
+	codeDomainDisabled    reason = 208
+	codeParamValueInvalid reason = 209
+	codeDomainInUse       reason = 210
+	codeGroupInUse        reason = 211
+	codeUserInUse         reason = 212
+	//服务端原因
 	codeDatabaseConnectFailed reason = 300
 	codeSQLExecutionFailed    reason = 301
 	codeBodyReadFailed        reason = 302
@@ -49,7 +65,7 @@ func (r reason) String() string {
 	switch r {
 	case codeSuccess:
 		return "success"
-	//http请求问题
+	//http请求原因
 	case codeBodyEmpty:
 		return "http body data is empty"
 	case codeLackOfParams:
@@ -60,8 +76,15 @@ func (r reason) String() string {
 		return "Bad request method"
 	case codeBodyParsingFailed:
 		return "Body parsing failed"
-	//数据不符
-	case codeDomainNotFound:
+	case codeMissingRequiredParams:
+		return "Missing required parameter"
+	case codeRequestRefused:
+		return "The request is refused"
+	case codeRequestIDInvalid:
+		return "The id is invalid"
+
+	//数据原因
+	case codeDomainNotFound: //201
 		return "Domain not found"
 	case codeGroupNotFound:
 		return "Group not found"
@@ -73,8 +96,20 @@ func (r reason) String() string {
 		return "Group exists"
 	case codeUserExists:
 		return "User exists"
-	//服务端内部问题
-	case codeDatabaseConnectFailed:
+	case codeStateChangeFailed: //207
+		return "Change agent state failed"
+	case codeDomainDisabled: //208
+		return "Domain disabled"
+	case codeParamValueInvalid: //209
+		return "The parameter value is invalid"
+	case codeDomainInUse:
+		return "The domain in use"
+	case codeGroupInUse:
+		return "The group in use"
+	case codeUserInUse:
+		return "The user in use"
+	//服务端原因
+	case codeDatabaseConnectFailed: //300
 		return "can't connect Database"
 	case codeSQLExecutionFailed:
 		return "SQL execution failed"
@@ -89,15 +124,38 @@ func (r reason) String() string {
 	}
 }
 
-func errorMessage(r reason) string {
-	//私有状态码
+func respErrorMessage(w http.ResponseWriter, r reason) {
+	var desc httpErrRespDesc
 	if r < 400 {
-		var desc httpRespDesc
-		desc.Code = r
-		desc.Message = r.String()
-		jsonStr, _ := json.Marshal(&desc)
-		return string(jsonStr)
+		//私有状态码,统一回复400
+		w.WriteHeader(400)
+	} else {
+		w.WriteHeader(int(r))
 	}
-	//http状态码
-	return fmt.Sprintf("%d %s", r, r.String())
+
+	desc.Code = r
+	desc.Message = r.String()
+	jsonStr, _ := json.Marshal(&desc)
+	fmt.Fprintf(w, string(jsonStr))
+}
+
+// func respErrorMessage(r reason) string {
+// 	//私有状态码
+// 	if r < 400 {
+// 		var desc httpErrRespDesc
+// 		desc.Code = r
+// 		desc.Message = r.String()
+// 		jsonStr, _ := json.Marshal(&desc)
+// 		return string(jsonStr)
+// 	}
+// 	//http状态码
+// 	return fmt.Sprintf("%d %s", r, r.String())
+// }
+
+func respOKMessage(id int) string {
+
+	var desc httpOKRespDesc
+	desc.ID = id
+	jsonStr, _ := json.Marshal(&desc)
+	return string(jsonStr)
 }

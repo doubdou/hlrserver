@@ -22,7 +22,7 @@
 	</database>
 
   <eventsocket>
-    <!-- FreeSWITCH-UAS 服务器地址,一般HLR和FreeSWITCH-UAS部署与同一台机器 -->
+    <!-- FreeSWITCH-UAS 服务器地址,一般AMS和FreeSWITCH-UAS部署与同一台机器 -->
     <host>192.168.71.137</host>
     
     <!-- FreeSWITCH-UAS ESL监听端口, 默认8021-->
