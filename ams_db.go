@@ -48,16 +48,27 @@ var insertDomainSQL string = "INSERT INTO ams_domain(name,tenant_id,company,enab
 var insertGroupSQL string = "INSERT INTO ams_group(name,group_desc,parent_id,domain_id) VALUES('%s','%s','%d','%d') RETURNING id"
 var insertUserSQL string = "INSERT INTO ams_user(username,password,group_id) VALUES('%s','%s','%d') RETURNING id"
 
-var selectDomainSQL string = "SELECT id,name,tenant_id,company,enable FROM ams_domain where id=%s"
-var selectGroupSQL string = "SELECT id,name,group_desc,parent_id,domain_id FROM ams_group where id=%s"
-var selectUserSQL string = "SELECT id,username,password,group_id FROM ams_user where id=%s"
+var selectDomainSQL string = "SELECT id,name,tenant_id,company,enable FROM ams_domain where id=%d"
+var selectGroupSQL string = "SELECT id,name,group_desc,parent_id,domain_id FROM ams_group where id=%d"
+var selectUserSQL string = "SELECT id,username,password,group_id FROM ams_user where id=%d"
 
-var selectEnabledUsersSQL string = "select u.id,u.username,u.password,u.group_id from ams_user as u left join ams_group as g on u.group_id=g.id where g.domain_id=%d;"
+var selectEnabledUsersSQL string = "select u.id,u.username,u.password,u.group_id from ams_user as u left join ams_group as g on u.group_id=g.id where g.domain_id=%d"
 var selectEnabledDomainsSQL string = "SELECT id,name,tenant_id,company FROM ams_domain where enable=true"
 
-var selectDomainIDByNameSQL string = "SELECT id FROM ams_domain WHERE name=%s"
+//查找domain下的username
+var selectUsernameFromDomainSQL string = "select u.username from ams_user as u INNER join ams_group as g on u.group_id=g.id where g.domain_id=%d and u.username='%s' LIMIT 1"
 
-var selectRealmByIDSQL string = "SELECT name FROM ams_domain WHERE id=%s"
+var selectDomainIDByNameSQL string = "SELECT id FROM ams_domain WHERE name='%s'"
+var selectGroupIDByNameSQL string = "SELECT id FROM ams_group WHERE name='%s'"
+var selectUserIDByNameSQL string = "SELECT id FROM ams_user WHERE username='%s'"
+
+var selectRealmByIDSQL string = "SELECT name FROM ams_domain WHERE id=%d"
+var selectGroupNameByIDSQL string = "SELECT name FROM ams_group WHERE id=%d"
+var selectUserNameByIDSQL string = "SELECT name FROM ams_user WHERE id=%d"
+
+var selectOneGroupIDByDomainIDSQL string = "SELECT id from ams_group where domain_id=%d LIMIT 1"
+var selectOneGroupIDByParentIDSQL string = "SELECT id FROM ams_group WHERE parent_id=%d LIMIT 1"
+var selectOneUserIDByGroupIDSQL string = "SELECT id FROM ams_user WHERE group_id=%d LIMIT 1"
 
 /*
 var updateDomainSQL string = "UPDATE ams_domain SET name='%s',tenant_id=%d,company='%s',enable=%t where id=%d"
@@ -186,13 +197,12 @@ func (c *AppConnector) InsertUser(user string, password string, groupID int) (in
 }
 
 //ReadDomain 查询domain信息
-func (c *AppConnector) ReadDomain(id string) (*DomainInfo, error) {
+func (c *AppConnector) ReadDomain(id int) (*DomainInfo, error) {
 	if c == nil {
 		Error.Println("db context is null")
 		return nil, errors.New("db context is null")
 	}
 	queryStr := fmt.Sprintf(selectDomainSQL, id)
-	//Error.Println("-----queryStr----", queryStr)
 	rows, err := c.dbConn.Query(queryStr)
 
 	if err != nil {
@@ -206,19 +216,21 @@ func (c *AppConnector) ReadDomain(id string) (*DomainInfo, error) {
 		if err != nil {
 			Error.Println(err)
 		}
-		Error.Println(p.id, p.Name, p.TenantID, p.Company, p.Enable)
+		// Debug.Println(p.id, p.Name, p.TenantID, p.Company, p.Enable)
 	}
 	return p, nil
 }
 
 //ReadGroup 查询group信息
-func (c *AppConnector) ReadGroup(id string) (*GroupInfo, error) {
+func (c *AppConnector) ReadGroup(id int) (*GroupInfo, error) {
+	if id <= 0 {
+		return nil, errors.New("input parameters null")
+	}
 	queryStr := fmt.Sprintf(selectGroupSQL, id)
 
 	rows, err := c.dbConn.Query(queryStr)
-
 	if err != nil {
-		Error.Println(err.Error())
+		Error.Println(err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -228,13 +240,13 @@ func (c *AppConnector) ReadGroup(id string) (*GroupInfo, error) {
 		if err != nil {
 			Error.Println(err)
 		}
-		Error.Println(p.id, p.Name, p.GroupDesc, p.ParentID, p.DomainID)
+		// Debug.Println(p.id, p.Name, p.GroupDesc, p.ParentID, p.DomainID)
 	}
 	return p, nil
 }
 
 //ReadUser 查询user信息
-func (c *AppConnector) ReadUser(id string) (*UserInfo, error) {
+func (c *AppConnector) ReadUser(id int) (*UserInfo, error) {
 	queryStr := fmt.Sprintf(selectUserSQL, id)
 
 	rows, err := c.dbConn.Query(queryStr)
@@ -250,7 +262,7 @@ func (c *AppConnector) ReadUser(id string) (*UserInfo, error) {
 		if err != nil {
 			Error.Println(err)
 		}
-		Error.Println(p.id, p.Username, p.Password, p.GroupID)
+		// Debug.Println(p.id, p.Username, p.Password, p.GroupID)
 	}
 	return p, nil
 }
@@ -335,8 +347,8 @@ func (c *AppConnector) GetDomainIDByName(name string) (id int) {
 	return id
 }
 
-//GetDomainByID 通过ID获取domain的realm
-func (c *AppConnector) GetDomainByID(id int) (realm string) {
+//GetRealmByID 通过ID获取domain的realm
+func (c *AppConnector) GetRealmByID(id int) (realm string) {
 	queryStr := fmt.Sprintf(selectRealmByIDSQL, id)
 	rows, err := c.dbConn.Query(queryStr)
 
@@ -353,4 +365,129 @@ func (c *AppConnector) GetDomainByID(id int) (realm string) {
 		}
 	}
 	return realm
+}
+
+//GetGroupIDByName 通过name查询group的ID
+func (c *AppConnector) GetGroupIDByName(name string) (id int) {
+	queryStr := fmt.Sprintf(selectGroupIDByNameSQL, name)
+	rows, err := c.dbConn.Query(queryStr)
+
+	if err != nil {
+		Error.Println("GetGroupIDByName db query error:", err)
+		return 0
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		err := rows.Scan(&id)
+		if err != nil {
+			Error.Println(err)
+		}
+	}
+	return id
+}
+
+//GetGroupNameByID 通过ID获取group的name
+func (c *AppConnector) GetGroupNameByID(id int) (name string) {
+	queryStr := fmt.Sprintf(selectGroupNameByIDSQL, id)
+	rows, err := c.dbConn.Query(queryStr)
+
+	if err != nil {
+		Error.Println("GetGroupNameByID db query error:", err)
+		return ""
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		err := rows.Scan(&name)
+		if err != nil {
+			Error.Println(err)
+		}
+	}
+	return name
+}
+
+//GetOneGroupIDByDomainID 查找在域内的一个组ID
+func (c *AppConnector) GetOneGroupIDByDomainID(id int) int {
+	queryStr := fmt.Sprintf(selectOneGroupIDByDomainIDSQL, id)
+	rows, err := c.dbConn.Query(queryStr)
+
+	if err != nil {
+		Error.Println("GetChildGroupIDbyParentID db query error:", err)
+		return 0
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		err := rows.Scan(&id)
+		if err != nil {
+			Error.Println(err)
+		}
+	}
+	return id
+}
+
+//GetChildGroupIDbyParentID 查找一个下级组的ID
+func (c *AppConnector) GetChildGroupIDbyParentID(id int) int {
+
+	queryStr := fmt.Sprintf(selectOneGroupIDByParentIDSQL, id)
+	rows, err := c.dbConn.Query(queryStr)
+
+	if err != nil {
+		Error.Println("GetChildGroupIDbyParentID db query error:", err)
+		return 0
+	}
+	defer rows.Close()
+	childGroupID := 0
+	for rows.Next() {
+		err := rows.Scan(&childGroupID)
+		if err != nil {
+			Error.Println(err)
+		}
+	}
+	return childGroupID
+}
+
+//GetOneUserByGroupID 查找一个组内用户ID
+func (c *AppConnector) GetOneUserByGroupID(id int) int {
+	queryStr := fmt.Sprintf(selectOneUserIDByGroupIDSQL, id)
+	rows, err := c.dbConn.Query(queryStr)
+
+	if err != nil {
+		Error.Println("GetOneUserByGroupID db query error:", err)
+		return 0
+	}
+	defer rows.Close()
+
+	userID := 0
+	for rows.Next() {
+		err := rows.Scan(&userID)
+		if err != nil {
+			Error.Println(err)
+		}
+	}
+	return userID
+}
+
+//CheckUsernameInDomainExist 检查domain下username是否存在
+func (c *AppConnector) CheckUsernameInDomainExist(domainID int, username string) bool {
+	queryStr := fmt.Sprintf(selectUsernameFromDomainSQL, domainID, username)
+	rows, err := c.dbConn.Query(queryStr)
+
+	if err != nil {
+		Error.Println("CheckUsernameInDomain db query error:", err)
+		return true
+	}
+	defer rows.Close()
+	var name string
+	for rows.Next() {
+		err := rows.Scan(&name)
+		if err != nil {
+			Error.Println(err)
+		}
+	}
+	if name == "" {
+		return false
+	}
+	return true
 }

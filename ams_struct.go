@@ -101,13 +101,11 @@ type userJSONRequest struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
 	GroupID  int    `json:"group_id"`
-	Status   string `json:"status"`
-	State    string `json:"state"`
 }
 
 type agentStateRequest struct {
 	Realm    string         `json:"realm"`
-	username string         `json:"username"`
+	Username string         `json:"username"`
 	State    agentStateType `json:"state"`
 }
 

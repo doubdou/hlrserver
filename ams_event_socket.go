@@ -150,13 +150,14 @@ func EventSocketStartup(addr string, password string) {
 	go func() {
 		//连接FreeSWITCH
 		c, _ = eventSocketConnect(addr, password)
+		Info.Println("Connected to FreeSWITCH successfully:", addr)
 		//进入event的循环
 		for {
 			ev, err := c.ReadEvent()
 			if err != nil {
 				Error.Println("event socket disconnected", err)
 				c, _ = eventSocketConnect(addr, password)
-				Info.Println("event socket connect to FreeSWITCH success")
+				Info.Println("reconnected to FreeSWITCH successfully")
 				continue
 			}
 			// ev.PrettyPrint()

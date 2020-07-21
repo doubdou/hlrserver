@@ -33,8 +33,8 @@ const (
 	codeRequestIDInvalid      reason = 108
 
 	//数据原因
-	codeDomainNotFound    reason = 201
 	codeGroupNotFound     reason = 202
+	codeDomainNotFound    reason = 201
 	codeUserNotFound      reason = 203
 	codeDomainExists      reason = 204
 	codeGroupExists       reason = 205
@@ -49,6 +49,7 @@ const (
 	codeDatabaseConnectFailed reason = 300
 	codeSQLExecutionFailed    reason = 301
 	codeBodyReadFailed        reason = 302
+	codeServerInternalError   reason = 303
 	//http协议头状态码
 	/***************http协议***********************************/
 	codeBadRequest   reason = 400
@@ -119,20 +120,21 @@ func (r reason) String() string {
 		return "page not Found"
 	case codeBadRequest:
 		return "Bad request"
+	case codeServerInternalError:
+		return "Server internal error"
 	default:
 		return "Unknown error"
 	}
 }
 
 func respErrorMessage(w http.ResponseWriter, r reason) {
-	var desc httpErrRespDesc
 	if r < 400 {
 		//私有状态码,统一回复400
 		w.WriteHeader(400)
 	} else {
 		w.WriteHeader(int(r))
 	}
-
+	var desc httpErrRespDesc
 	desc.Code = r
 	desc.Message = r.String()
 	jsonStr, _ := json.Marshal(&desc)
@@ -152,10 +154,12 @@ func respErrorMessage(w http.ResponseWriter, r reason) {
 // 	return fmt.Sprintf("%d %s", r, r.String())
 // }
 
-func respOKMessage(id int) string {
-
-	var desc httpOKRespDesc
-	desc.ID = id
-	jsonStr, _ := json.Marshal(&desc)
-	return string(jsonStr)
+func respOKMessage(w http.ResponseWriter, id int) {
+	w.WriteHeader(200)
+	if id > 0 {
+		var desc httpOKRespDesc
+		desc.ID = id
+		jsonStr, _ := json.Marshal(&desc)
+		fmt.Fprintf(w, string(jsonStr))
+	}
 }

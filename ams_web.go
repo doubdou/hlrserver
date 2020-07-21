@@ -100,7 +100,13 @@ func domainGet(w http.ResponseWriter, r *http.Request) {
 
 func domainModify(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	id := vars["id"]
+	idStr := vars["id"]
+	domainID, err := strconv.Atoi(idStr)
+	if err != nil {
+		respErrorMessage(w, codeRequestIDInvalid)
+		Error.Println("domainModify fail", "request id invalid")
+		return
+	}
 	buf, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		respErrorMessage(w, codeBodyReadFailed)
@@ -126,10 +132,10 @@ func domainModify(w http.ResponseWriter, r *http.Request) {
 		Error.Println("domainModify getDBDriver fail", err)
 		return
 	}
-	domainInfo, err := db.ReadDomain(id)
+	domainInfo, err := db.ReadDomain(domainID)
 	if err != nil {
 		respErrorMessage(w, codeDomainNotFound)
-		Error.Println("domainModify ReadDomain ", id, err)
+		Error.Println("domainModify ReadDomain fail:", err)
 		return
 	}
 	//数据检查
@@ -157,50 +163,56 @@ func domainModify(w http.ResponseWriter, r *http.Request) {
 		respErrorMessage(w, codeSQLExecutionFailed)
 		return
 	}
+	//设为true,则重载内存数据
+	if domainInfo.Enable == "false" && req.Enable == "true" {
+		ReloadAllData()
+	}
 }
 
 func domainDelete(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	idStr := vars["id"]
-	id, err := strconv.Atoi(idStr)
+	domainID, err := strconv.Atoi(idStr)
 	if err != nil {
 		respErrorMessage(w, codeRequestIDInvalid)
-		Error.Println("domainDelete fail", err)
+		Error.Println("groupDelete fail:", "request id invalid")
 		return
 	}
 	db, err := GetDBConnector()
 	if err != nil {
 		respErrorMessage(w, codeDatabaseConnectFailed)
-		Error.Println("domainDelete getDBDriver fail", err)
+		Error.Println("domainDelete fail:", err)
 		return
 	}
-	realm := db.GetDomainByID(id)
+
+	domainInfo, _ := db.ReadDomain(domainID)
 	//从内存中释放
-	domain := locateDomainAndLock(realm)
-	if domain == nil {
+	if domainInfo.id == 0 {
 		respErrorMessage(w, codeDomainNotFound)
 		Error.Println("domainDelete fail: domain not found")
 		return
 	}
-	if domain.agentCount > 0 {
+
+	groupID := db.GetOneGroupIDByDomainID(domainInfo.id)
+	if groupID != 0 {
 		respErrorMessage(w, codeDomainInUse)
 		Error.Println("domainDelete fail: domain in use")
-		domain.Unlock()
 		return
 	}
-	deleteDomainData(realm)
+
 	//删除数据库记录
-	err = db.DeleteDomain(id)
+	err = db.DeleteDomain(domainInfo.id)
 	if err != nil {
 		respErrorMessage(w, codeSQLExecutionFailed)
-		Error.Println("domainDelete fail: SQL execute failed:", err)
-		domain.Unlock()
+		Error.Println("domainDelete failed:", err)
 		return
 	}
+	respOKMessage(w, domainInfo.id)
 }
 
 // domain 处理POST请求，添加域
 func domainAdd(w http.ResponseWriter, r *http.Request) {
+	time.Sleep(1 * time.Second)
 	//1) 必选项检查
 	//2) 检查domain名字的合法性(暂无)
 	//3) 检查域是否已存在
@@ -208,10 +220,12 @@ func domainAdd(w http.ResponseWriter, r *http.Request) {
 	buf, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		respErrorMessage(w, codeBodyReadFailed)
+		Error.Println("domainAdd fail:", codeBodyReadFailed.String(), err)
 		return
 	}
 	if len(buf) == 0 {
 		respErrorMessage(w, codeBodyEmpty)
+		Error.Println("domainAdd fail:", codeBodyEmpty.String())
 		return
 	}
 	req := domainJSONRequest{}
@@ -235,7 +249,7 @@ func domainAdd(w http.ResponseWriter, r *http.Request) {
 	db, err := GetDBConnector()
 	if err != nil {
 		respErrorMessage(w, codeDatabaseConnectFailed)
-		Error.Println("domainAdd getDBDriver fail", err)
+		Error.Println("domainAdd fail", err)
 		return
 	}
 	id := db.GetDomainIDByName(req.Name)
@@ -251,12 +265,19 @@ func domainAdd(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintf(w, respOKMessage(newID))
+	respOKMessage(w, newID)
 	if req.Enable == "true" {
 		//加载到内存
-		domain := locateDomainAndLock(req.Name)
-		reloadDomain(domain)
-		domain.Unlock()
+		p := new(DomainInfo)
+		p.id = newID
+		p.Name = req.Name
+		p.Company = req.Company
+		p.TenantID = req.TenantID
+		p.Enable = req.Enable
+		err := addDomainData(p)
+		if err != nil {
+			Error.Println("domainAdd fail: insert db success but not load into memory data")
+		}
 	}
 	return
 }
@@ -270,24 +291,473 @@ func groupGet(w http.ResponseWriter, r *http.Request) {
 }
 
 func groupModify(w http.ResponseWriter, r *http.Request) {
+	// 1) 检查请求内容是否合法
+	// 可修改的信息:
+	//		组的名称;
+	//		上级组;
+	//		组的描述;
+	// 不可修改的:
+	// 		域id;
+	// 2)检查组是否存在
+	// 3) 若需要改变上级组信息. 则判断:
+	// 		上级组是否存在, 且在同一个域中;
+	// 		检查是否互为上级组;
+	// 4) 修改数据库
+	vars := mux.Vars(r)
+	idStr := vars["id"]
+	groupID, err := strconv.Atoi(idStr)
+	if err != nil {
+		respErrorMessage(w, codeRequestIDInvalid)
+		Error.Println("groupModify fail", "request id invalid")
+		return
+	}
+	buf, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		respErrorMessage(w, codeBodyReadFailed)
+		return
+	}
+	if len(buf) == 0 {
+		respErrorMessage(w, codeBodyEmpty)
+		return
+	}
+	req := groupJSONRequest{}
+	err = json.Unmarshal(buf, &req)
+	if err != nil {
+		respErrorMessage(w, codeBodyParsingFailed)
+		Error.Println("groupModify fail:", codeBodyParsingFailed.String())
+		return
+	}
+	if req.DomainID != 0 {
+		respErrorMessage(w, codeRequestRefused)
+		Error.Println("groupModify fail:", codeRequestRefused.String())
+		return
+	}
+
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("groupModify fail", err)
+		return
+	}
+	groupInfo, _ := db.ReadGroup(groupID)
+	if groupInfo.id == 0 {
+		respErrorMessage(w, codeGroupNotFound)
+		Error.Println("groupModify fail:", codeGroupNotFound.String())
+		return
+	}
+
+	if req.ParentID > 0 {
+		groupParentInfo, _ := db.ReadGroup(req.ParentID)
+		if groupParentInfo.id == 0 {
+			//上级组不存在
+			respErrorMessage(w, codeParamValueInvalid)
+			Error.Println("groupModify fail:", codeParamValueInvalid.String())
+			return
+		}
+		if groupParentInfo.DomainID != groupInfo.DomainID {
+			//和上级组不在同一个域
+			respErrorMessage(w, codeParamValueInvalid)
+			Error.Println("groupModify fail:", codeParamValueInvalid.String())
+			return
+		}
+		if groupInfo.id == groupParentInfo.ParentID {
+			//互为上级组
+			respErrorMessage(w, codeParamValueInvalid)
+			Error.Println("groupModify fail:", codeParamValueInvalid.String())
+			return
+		}
+		groupInfo.ParentID = req.ParentID
+	}
+	groupInfo.GroupDesc = req.GroupDesc
+	groupInfo.Name = req.Name
+
+	err = db.UpdateGroup(groupInfo)
+	if err != nil {
+		respErrorMessage(w, codeSQLExecutionFailed)
+		Error.Println("groupModify fail:", codeSQLExecutionFailed.String())
+		return
+	}
+	respOKMessage(w, groupInfo.id)
+	return
 }
 
 func groupDelete(w http.ResponseWriter, r *http.Request) {
+	// 1) 找到组, 如果找不到, 返回部分或小组不存在
+	// 2) 查找下级组, 如果有, 则提示有下级小组存在, 不能删除
+	// 3) 查询用户, 如果有, 则提示有用户存在, 不能删除.
+	// 4) 删除操作.
+
+	vars := mux.Vars(r)
+	idStr := vars["id"]
+	groupID, err := strconv.Atoi(idStr)
+	if err != nil {
+		respErrorMessage(w, codeRequestIDInvalid)
+		Error.Println("groupDelete fail", "request id invalid")
+		return
+	}
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("groupDelete fail", err)
+		return
+	}
+	groupInfo, err := db.ReadGroup(groupID)
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("groupDelete fail", err)
+		return
+	}
+
+	if groupInfo.id == 0 {
+		respErrorMessage(w, codeGroupNotFound)
+		Error.Println("groupDelete fail: group not found")
+		return
+	}
+
+	childID := db.GetChildGroupIDbyParentID(groupInfo.id)
+	if childID != 0 {
+		respErrorMessage(w, codeGroupInUse)
+		Error.Println("groupDelete fail: group in use by child group ", childID)
+		return
+	}
+	userID := db.GetOneUserByGroupID(groupInfo.id)
+	if userID != 0 {
+		respErrorMessage(w, codeGroupInUse)
+		Error.Println("groupDelete fail: group in use because still users in group")
+		return
+	}
+	//无需从内存中删除
+	//删除数据库记录
+	err = db.DeleteGroup(groupInfo.id)
+	if err != nil {
+		respErrorMessage(w, codeSQLExecutionFailed)
+		Error.Println("domainDelete fail: SQL execute failed:", err)
+		return
+	}
+	respOKMessage(w, groupInfo.id)
 }
 
 func groupAdd(w http.ResponseWriter, r *http.Request) {
+	//1) 必选项检查
+	//2) 检查group名字是否已经存在
+	//3) 如果存在上级组parentID参数，检查是否存在，并且该上级组所属domainID与本请求的domainID一致
+	//4) 如果不存在上级组，检查domainID是否存在
+	//4) 在内存中加载
+
+	buf, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		respErrorMessage(w, codeBodyReadFailed)
+		return
+	}
+	if len(buf) == 0 {
+		respErrorMessage(w, codeBodyEmpty)
+		return
+	}
+	req := groupJSONRequest{}
+	err = json.Unmarshal(buf, &req)
+	if err != nil {
+		respErrorMessage(w, codeBodyParsingFailed)
+		return
+	}
+
+	if req.Name == "" || req.DomainID == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("groupAdd fail: missing required parameter")
+		return
+	}
+
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("groupAdd getDBDriver fail", err)
+		return
+	}
+	id := db.GetGroupIDByName(req.Name)
+	if id != 0 {
+		respErrorMessage(w, codeGroupExists)
+		Error.Println("groupAdd fail: group exists")
+		return
+	}
+	if req.ParentID != 0 {
+		parentGroup, _ := db.ReadGroup(req.ParentID)
+		if parentGroup.id == 0 {
+			respErrorMessage(w, codeRequestRefused)
+			Error.Println("groupAdd fail: parent id not exists")
+			return
+		}
+		if parentGroup.DomainID != req.DomainID {
+			respErrorMessage(w, codeRequestRefused)
+			Error.Println("groupAdd fail: request domain is different from parent's domain")
+			return
+		}
+	}
+	domainInfo, _ := db.ReadDomain(req.DomainID)
+	if domainInfo.Name == "" {
+		respErrorMessage(w, codeDomainNotFound)
+		Error.Println("groupAdd fail: request domain not exists")
+		return
+	}
+
+	newID, err := db.InsertGroup(req.Name, req.GroupDesc, req.ParentID, req.DomainID)
+	if err != nil {
+		respErrorMessage(w, codeSQLExecutionFailed)
+		Error.Println("groupAdd fail:", err)
+		return
+	}
+
+	if domainInfo.Enable == "true" {
+		//加载到内存
+		domain := locateDomainAndLock(domainInfo.Name)
+		reloadDomain(domain)
+		domain.Unlock()
+	}
+	respOKMessage(w, newID)
+	return
 }
 
 func userGet(w http.ResponseWriter, r *http.Request) {
+
 }
 
 func userModify(w http.ResponseWriter, r *http.Request) {
+	// 1) 检查用户是否存在，获取用户信息、组ID 、域名等
+	// 2) 检查允许修改的内容以及合法性：
+	//   	账号名;
+	//   	密码;
+	//   	组ID(检查请求的group是否与当前的group在同一个domain);
+	// 3) 检查用户注册状态是否登出
+	// 4) 修改数据库
+	// 5) 更新内存
+
+	vars := mux.Vars(r)
+	idStr := vars["id"]
+	userID, err := strconv.Atoi(idStr)
+	if err != nil {
+		respErrorMessage(w, codeRequestIDInvalid)
+		Error.Println("userModify fail:", "request id invalid")
+		return
+	}
+	buf, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		respErrorMessage(w, codeBodyReadFailed)
+		return
+	}
+	if len(buf) == 0 {
+		respErrorMessage(w, codeBodyEmpty)
+		Error.Println("userModify fail:", codeBodyEmpty.String())
+		return
+	}
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("userModify fail", err)
+		return
+	}
+	req := userJSONRequest{}
+	err = json.Unmarshal(buf, &req)
+	if err != nil {
+		respErrorMessage(w, codeBodyParsingFailed)
+		Error.Println("userModify fail:", codeBodyParsingFailed.String())
+		return
+	}
+	if req.Password == "" || req.GroupID == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("userModify fail:", codeMissingRequiredParams.String())
+		return
+	}
+	userInfo, err := db.ReadUser(userID)
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("userModify fail", err)
+		return
+	}
+	if userInfo.id == 0 {
+		respErrorMessage(w, codeUserNotFound)
+		Error.Println("userModify fail", codeUserNotFound.String())
+		return
+	}
+	groupInfo, _ := db.ReadGroup(userInfo.GroupID)
+	if groupInfo.id == 0 {
+		respErrorMessage(w, codeServerInternalError)
+		Error.Println("userModify fail:", codeServerInternalError.String())
+		return
+	}
+	realm := db.GetRealmByID(groupInfo.DomainID)
+	if realm == "" {
+		respErrorMessage(w, codeServerInternalError)
+		Error.Println("userModify fail:", codeServerInternalError.String())
+		return
+	}
+	//检查请求的group是否与当前的group在同一个domain
+	if userInfo.GroupID != req.GroupID {
+		realmRequest := db.GetRealmByID(req.GroupID)
+		if realmRequest != realm {
+			respErrorMessage(w, codeRequestRefused)
+			Error.Println("userModify fail:", codeRequestRefused.String())
+		}
+	}
+	domainManage := findDomainAndRLock(realm)
+	user := domainManage.mapping[userInfo.Username]
+	user.Lock()
+	domainManage.RUnlock()
+	if user.Status == StatusAvailable {
+		respErrorMessage(w, codeRequestRefused)
+		Error.Println("userModify fail:", codeRequestRefused.String())
+		user.Unlock()
+		return
+	}
+	//更新数据库
+	userInfo.Password = req.Password
+	userInfo.GroupID = req.GroupID
+	err = db.UpdateUser(userInfo)
+	if err != nil {
+		//数据库更新失败，回滚，内存数据不动
+		respErrorMessage(w, codeSQLExecutionFailed)
+		Error.Println("userModify fail:", codeSQLExecutionFailed.String())
+		user.Unlock()
+		return
+	}
+
+	user.UserInfo = userInfo
+	user.Unlock()
+
+	respOKMessage(w, userInfo.id)
 }
 
 func userDelete(w http.ResponseWriter, r *http.Request) {
+	// 1) 检查用户是否存在，获取用户信息、组ID 、域名等
+	// 2) 检查用户注册状态是否登出
+	// 3) 从数据库删除
+	// 4) 更新内存
+
+	vars := mux.Vars(r)
+	idStr := vars["id"]
+	userID, err := strconv.Atoi(idStr)
+	if err != nil {
+		respErrorMessage(w, codeRequestIDInvalid)
+		Error.Println("userDelete fail:", "request id invalid")
+		return
+	}
+
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("userDelete fail", err)
+		return
+	}
+
+	userInfo, err := db.ReadUser(userID)
+	if err != nil {
+		respErrorMessage(w, codeSQLExecutionFailed)
+		Error.Println("userDelete fail ", codeSQLExecutionFailed.String(), err)
+		return
+	}
+	if userInfo.id == 0 {
+		respErrorMessage(w, codeUserNotFound)
+		Error.Println("userDelete fail", codeUserNotFound.String())
+		return
+	}
+	groupInfo, _ := db.ReadGroup(userInfo.GroupID)
+	if groupInfo.id == 0 {
+		respErrorMessage(w, codeServerInternalError)
+		Error.Println("userDelete fail:", codeServerInternalError.String())
+		return
+	}
+	realm := db.GetRealmByID(groupInfo.DomainID)
+	if realm == "" {
+		respErrorMessage(w, codeServerInternalError)
+		Error.Println("userDelete fail:", codeServerInternalError.String())
+		return
+	}
+
+	domainManage := findDomainAndRLock(realm)
+	user := domainManage.mapping[userInfo.Username]
+	user.Lock()
+	domainManage.RUnlock()
+
+	if user.Status == StatusAvailable {
+		respErrorMessage(w, codeRequestRefused)
+		Error.Println("userDelete fail:", codeRequestRefused.String())
+		user.Unlock()
+		return
+	}
+	//从数据库删除
+	user.Unlock()
+	err = db.DeleteUser(userInfo.id)
+	if err != nil {
+		//数据库更新失败，回滚，内存数据不动
+		respErrorMessage(w, codeSQLExecutionFailed)
+		Error.Println("userDelete fail:", codeSQLExecutionFailed.String())
+		return
+	}
+
+	domainManage = locateDomainAndLock(realm)
+	domainManage.mapping[userInfo.Username] = nil
+	domainManage.Unlock()
+
+	respOKMessage(w, userInfo.id)
 }
 
 func userAdd(w http.ResponseWriter, r *http.Request) {
+	// 1) 检查需要添加的组是否存在
+	// 2) 检查username 在对应的域中是否重复
+	// 3) 添加到数据库中
+	// 4) 如果内存中有对应的域, 则添加到内存中.
+	buf, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		respErrorMessage(w, codeBodyReadFailed)
+		return
+	}
+	if len(buf) == 0 {
+		respErrorMessage(w, codeBodyEmpty)
+		return
+	}
+	req := userJSONRequest{}
+	err = json.Unmarshal(buf, &req)
+	if err != nil {
+		respErrorMessage(w, codeBodyParsingFailed)
+		Error.Println("useradd fail", codeBodyParsingFailed.String())
+		return
+	}
+	if req.Username == "" || req.Password == "" || req.GroupID == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("useradd fail", codeMissingRequiredParams.String())
+		return
+	}
+	Debug.Println("-----", req.Username, req.Password, req.GroupID)
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("useradd fail", err)
+		return
+	}
+	groupInfo, err := db.ReadGroup(req.GroupID)
+	if err != nil {
+		respErrorMessage(w, codeServerInternalError)
+		Error.Println("useradd fail", codeServerInternalError.String())
+		return
+	}
+	if groupInfo.id == 0 {
+		respErrorMessage(w, codeGroupNotFound)
+		Error.Println("useradd fail", codeGroupNotFound.String())
+		return
+	}
+
+	// 检查username 在对应的域中是否重复
+	if db.CheckUsernameInDomainExist(groupInfo.DomainID, req.Username) {
+		respErrorMessage(w, codeUserExists)
+		Error.Println("useradd fail:", codeUserExists.String())
+		return
+	}
+	//数据库操作
+	userID, err := db.InsertUser(req.Username, req.Password, req.GroupID)
+	if err != nil {
+		respErrorMessage(w, codeSQLExecutionFailed)
+		Error.Println("useradd fail:", codeSQLExecutionFailed.String())
+		return
+	}
+	respOKMessage(w, userID)
+	return
 }
 
 //<?xml version=\"1.0\" standalone=\"no\"?>
@@ -398,7 +868,7 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	// 	respErrorMessage(codeBadRequest))
 	// 	return
 	// }
-	Debug.Println(r.PostForm)
+	// Debug.Println(r.PostForm)
 	userArr := r.PostForm["user"]
 	domainArr := r.PostForm["domain"]
 	if len(userArr) != 1 || len(domainArr) != 1 {
@@ -454,7 +924,7 @@ func agentStateHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if req.Realm == "" || req.username == "" || req.State == "" {
+	if req.Realm == "" || req.Username == "" || req.State == "" {
 		respErrorMessage(w, codeMissingRequiredParams)
 		Error.Println("agentState handle fail: missing required parameter")
 		return
@@ -465,7 +935,7 @@ func agentStateHandler(w http.ResponseWriter, r *http.Request) {
 		Error.Println("agentState handle fail: request is refused")
 		return
 	}
-	err = userStateSet(req.username, req.Realm, req.State)
+	err = userStateSet(req.Username, req.Realm, req.State)
 	if err != nil {
 		respErrorMessage(w, codeRequestRefused)
 		Error.Println("agentState handle fail: request is refused")
@@ -544,6 +1014,7 @@ func (srv *WebServer) amsHTTPFunc(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	v := vars["category"]
 	handler := srv.httpHandlerMap[v][r.Method]
+	Debug.Printf("---- v:%s method:%s", v, r.Method)
 	if handler == nil {
 		respErrorMessage(w, codeBadRequestForm)
 		return

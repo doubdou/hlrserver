@@ -221,6 +221,23 @@ func userTalkingSet(username string, realm string, talking bool) {
 	domain.RUnlock()
 }
 
+func addDomainData(d *DomainInfo) error {
+	amsDataManage.Lock()
+	defer amsDataManage.Unlock()
+	thisDomain := amsDataManage.mapping[d.Name]
+	if thisDomain != nil {
+		return errors.New("domain is already exists in data")
+	}
+	thisDomain = new(DomainManage)
+
+	thisDomain.RWMutex = new(sync.RWMutex)
+	thisDomain.mapping = make(map[string]*UserCompleteInfo)
+	amsDataManage.mapping[d.Name] = thisDomain
+	thisDomain.DomainInfo = d
+
+	return nil
+}
+
 func deleteDomainData(realm string) error {
 
 	amsDataManage.Lock()
@@ -233,13 +250,42 @@ func deleteDomainData(realm string) error {
 	return nil
 }
 
-// //用domainID查询domain信息
-// func domainDataGetByID(domainID int) {
+func deleteUserData(username string, realm string) error {
+	amsDataManage.RLock()
+	domain := amsDataManage.mapping[realm]
+	domain.Lock()
+	amsDataManage.RUnlock()
 
-// }
+	domain.mapping[username] = nil
+	domain.Unlock()
 
-// //用userID查询user信息
-// func userDataGetByID(userID int) u *UserCompleteInfo {
+	return nil
+}
 
-// 	return u
-// }
+func addUserData(userInfo UserInfo, realm string) error {
+	amsDataManage.RLock()
+	domain := amsDataManage.mapping[realm]
+	domain.Lock()
+	amsDataManage.RUnlock()
+	user := domain.mapping[userInfo.Username]
+	if user != nil {
+		Error.Println("user", userInfo.Username, "already exists")
+		domain.Unlock()
+		return errors.New("user already exists")
+	}
+
+	user = new(UserCompleteInfo)
+	user.Mutex = new(sync.Mutex)
+	domain.mapping[userInfo.Username] = user
+	//计数器
+	domain.agentCount++
+	//初始化坐席状态信息
+	user.Status = StatusLoggedOut
+	user.State = StateIdle
+	user.AnsweredCalls = 0
+	user.TalkedTime = 0
+	user.Talking = false
+
+	domain.Unlock()
+	return nil
+}
