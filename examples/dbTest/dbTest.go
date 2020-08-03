@@ -1,24 +1,24 @@
 package main
 
 import (
+	"ams"
 	"fmt"
-	"hlr"
 
 	_ "github.com/lib/pq"
 )
 
 func main() {
-	hlr.LoadConfig()
-	c, err := hlr.DBDriver()
+	ams.LoadConfig()
+	c, err := ams.GetDBConnector()
 	if err != nil {
 		return
 	}
 	c.CreateTable()
-	c.InsertDomain("ai-ym.com", 300012, "cbz", true)
+	c.InsertDomain("ai-ym.com", 300012, "cbz", "true")
 	c.InsertGroup("dev", "开发中心", 0, 0)
 	c.InsertUser("15606130692", "123qwe", 0)
 	c.InsertUser("15371870149", "123qwe", 0)
-	g, err := c.ReadGroup("1")
+	g, err := c.ReadGroup(1)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -34,5 +34,5 @@ func main() {
 		fmt.Println("delete user fail ", err)
 	}
 
-	c.CloseDBDriver()
+	// c.CloseDBDriver()
 }

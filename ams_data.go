@@ -15,7 +15,7 @@ var amsDataManage = struct {
 	mapping: make(map[string]*DomainManage),
 }
 
-// 查找domain的内存位置,加读锁
+// 查找domain的内存位置,读锁
 // 注意，使用完需释放锁
 func findDomainAndRLock(realm string) *DomainManage {
 	amsDataManage.RLock()
@@ -28,7 +28,7 @@ func findDomainAndRLock(realm string) *DomainManage {
 	return thisDomain
 }
 
-// 定位domain的内存位置，加写锁
+// 定位domain的内存位置，写锁
 // 注意，使用完需释放锁
 func locateDomainAndLock(realm string) *DomainManage {
 	amsDataManage.RLock()

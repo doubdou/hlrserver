@@ -55,6 +55,7 @@ type UserInfo struct {
 	id       int
 	Username string
 	Password string
+	update   string
 	GroupID  int
 }
 

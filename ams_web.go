@@ -80,20 +80,86 @@ func exitFromWaitingAgents(groupID int) int {
 }
 
 func domainGet(w http.ResponseWriter, r *http.Request) {
-	buf, err := ioutil.ReadAll(r.Body)
-	if err != nil {
-		respErrorMessage(w, codeBodyReadFailed)
+	//支持模糊查询
+	//使用id是精确查询，使用domain(对应db中name字段)则是模糊查询
+	vars := r.URL.Query()
+	var domainID string
+	var name string
+	var pageStr string
+	var pageSizeStr string
+
+	if len(vars["id"]) != 0 {
+		domainID = vars["id"][0]
+	}
+	if len(vars["domain"]) != 0 {
+		name = vars["domain"][0]
+	}
+	if len(vars["page"]) != 0 {
+		pageStr = vars["page"][0]
+	}
+	if len(vars["pageSize"]) != 0 {
+		pageSizeStr = vars["pageSize"][0]
+	}
+	id, _ := strconv.Atoi(domainID)
+	page, _ := strconv.Atoi(pageStr)
+	pageSize, _ := strconv.Atoi(pageSizeStr)
+	Debug.Printf("domainGet id:%d Name:%s page:%d pageSize:%d", id, name, page, pageSize)
+	if page == 0 || pageSize == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("domainGet fail:", codeMissingRequiredParams.String())
 		return
 	}
-	if len(buf) == 0 {
-		respErrorMessage(w, codeBodyEmpty)
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("domainGet getDBDriver fail", err)
 		return
 	}
-	req := domainJSONRequest{}
-	err = json.Unmarshal(buf, &req)
+
+	resJSON := make(map[string]interface{})
+	if id != 0 {
+		//查询具体id的域
+		data := make(map[string]interface{})
+		domainInfo, _ := db.ReadDomain(id)
+		Debug.Println(domainInfo)
+		data["id"] = domainInfo.id
+		data["domain"] = domainInfo.Name
+		data["tenant_id"] = domainInfo.TenantID
+		data["company"] = domainInfo.Company
+		data["enable"] = domainInfo.Enable
+
+		resJSON["page"] = page
+		resJSON["pageSize"] = pageSize
+		resJSON["total"] = 1
+		resJSON["data"] = data
+
+	} else {
+		//模糊查询域信息
+		cnt, err := db.domainCount(name)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("domainGet count fail:", codeSQLExecutionFailed.String())
+			return
+		}
+		data, err := db.domainInfoMapList(name, page, pageSize)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("domainGet fail:", codeSQLExecutionFailed.String())
+			return
+		}
+		resJSON["page"] = page
+		resJSON["pageSize"] = pageSize
+		resJSON["total"] = cnt
+		resJSON["data"] = data
+	}
+
+	binData, err := json.Marshal(resJSON) //json化结果集
+
 	if err != nil {
-		respErrorMessage(w, codeBodyParsingFailed)
-		return
+		respErrorMessage(w, codeServerInternalError)
+		Error.Println("domainGet fail:", codeServerInternalError.String())
+	} else {
+		fmt.Fprintf(w, string(binData))
 	}
 	return
 }
@@ -212,7 +278,7 @@ func domainDelete(w http.ResponseWriter, r *http.Request) {
 
 // domain 处理POST请求，添加域
 func domainAdd(w http.ResponseWriter, r *http.Request) {
-	time.Sleep(1 * time.Second)
+	time.Sleep(3 * time.Second)
 	//1) 必选项检查
 	//2) 检查domain名字的合法性(暂无)
 	//3) 检查域是否已存在
@@ -283,11 +349,110 @@ func domainAdd(w http.ResponseWriter, r *http.Request) {
 }
 
 func groupGet(w http.ResponseWriter, r *http.Request) {
-	buf, err := ioutil.ReadAll(r.Body)
-	if err != nil {
-		Error.Println("groupGet:", err)
+	// $domain_id 域id, 必填, 所要查询的域.
+	// $group_id 实际需要查询的组id，如果无值，则查询域内所有组
+	// $page 页码，从1开始
+	// $pageSize 每页显示数量
+
+	vars := r.URL.Query()
+	var domainIDStr string
+	var groupIDStr string
+	var pageStr string
+	var pageSizeStr string
+
+	//domain_id 必填参数
+	if len(vars["domain_id"]) == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("groupGet fail:", codeMissingRequiredParams.String())
+		return
 	}
-	Error.Println(r.RequestURI, r.Method, string(buf))
+	if len(vars["domain_id"]) != 0 {
+		domainIDStr = vars["domain_id"][0]
+	}
+	if len(vars["group_id"]) != 0 {
+		groupIDStr = vars["group_id"][0]
+	}
+	if len(vars["page"]) == 0 || len(vars["pageSize"]) == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("groupGet fail:", codeMissingRequiredParams.String())
+		return
+	}
+	pageStr = vars["page"][0]
+	pageSizeStr = vars["pageSize"][0]
+
+	domainID, _ := strconv.Atoi(domainIDStr)
+	if domainID == 0 {
+		respErrorMessage(w, codeDomainNotFound)
+		Error.Println("groupGet fail:", codeDomainNotFound.String())
+		return
+	}
+	groupID, _ := strconv.Atoi(groupIDStr)
+	page, _ := strconv.Atoi(pageStr)
+	pageSize, _ := strconv.Atoi(pageSizeStr)
+	Debug.Printf("groupGet domain id:%d group id；%d page:%d pageSize:%d", domainID, groupID, page, pageSize)
+	if page == 0 || pageSize == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("groupGet fail:", codeMissingRequiredParams.String())
+		return
+	}
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("groupGet fail", err)
+		return
+	}
+
+	resJSON := make(map[string]interface{})
+	if groupID != 0 {
+		// 精确查询
+		data := make(map[string]interface{})
+		groupInfo, err := db.ReadGroup(groupID)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("groupGet fail:", codeSQLExecutionFailed.String())
+			return
+		}
+		Debug.Println(groupInfo)
+		data["id"] = groupInfo.id
+		data["name"] = groupInfo.Name
+		data["group_desc"] = groupInfo.GroupDesc
+		data["parent_id"] = groupInfo.ParentID
+		data["domain_id"] = groupInfo.DomainID
+
+		resJSON["page"] = page
+		resJSON["pageSize"] = pageSize
+		resJSON["total"] = 1
+		resJSON["data"] = data
+
+	} else {
+		// 查询域内所有组
+		cnt, err := db.groupCount(domainID)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("domainGet count fail:", codeSQLExecutionFailed.String())
+			return
+		}
+		data, err := db.groupInfoMapList(domainID, page, pageSize)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("domainGet fail:", codeSQLExecutionFailed.String())
+			return
+		}
+		resJSON["page"] = page
+		resJSON["pageSize"] = pageSize
+		resJSON["total"] = cnt
+		resJSON["data"] = data
+	}
+
+	binData, err := json.Marshal(resJSON) //json化结果集
+
+	if err != nil {
+		respErrorMessage(w, codeServerInternalError)
+		Error.Println("groupGet fail:", codeServerInternalError.String())
+	} else {
+		fmt.Fprintf(w, string(binData))
+	}
+	return
 }
 
 func groupModify(w http.ResponseWriter, r *http.Request) {
@@ -516,7 +681,131 @@ func groupAdd(w http.ResponseWriter, r *http.Request) {
 }
 
 func userGet(w http.ResponseWriter, r *http.Request) {
+	// $id为实际需要查询的号码id
+	// $domain需要查询的域
+	// $group 需要查询的组
+	// 注意: $id, $domain, $group这三个参数只能出现一个,不能同时出现.
+	vars := r.URL.Query()
+	var userIDStr string
+	var domainIDStr string
+	var groupIDStr string
+	var pageStr string
+	var pageSizeStr string
+	resJSON := make(map[string]interface{})
 
+	//domain_id 必填参数
+	if len(vars["user_id"]) == 0 && len(vars["group_id"]) == 0 && len(vars["domain_id"]) == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("userGet fail:", codeMissingRequiredParams.String())
+		return
+	}
+	if len(vars["page"]) == 0 || len(vars["pageSize"]) == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("userGet fail:", codeMissingRequiredParams.String())
+		return
+	}
+	pageStr = vars["page"][0]
+	pageSizeStr = vars["pageSize"][0]
+	page, _ := strconv.Atoi(pageStr)
+	pageSize, _ := strconv.Atoi(pageSizeStr)
+
+	if page == 0 || pageSize == 0 {
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("userGet fail:", codeMissingRequiredParams.String())
+		return
+	}
+
+	db, err := GetDBConnector()
+	if err != nil {
+		respErrorMessage(w, codeDatabaseConnectFailed)
+		Error.Println("userGet fail", err)
+		return
+	}
+
+	if len(vars["user_id"]) != 0 {
+		userIDStr = vars["user_id"][0]
+		userID, _ := strconv.Atoi(userIDStr)
+		if userID == 0 {
+			respErrorMessage(w, codeGroupNotFound)
+			Error.Println("userGet fail:", codeGroupNotFound.String())
+			return
+		}
+		data, err := db.userInfoMapListByUserID(userID, page, pageSize)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("userGet fail:", codeSQLExecutionFailed.String())
+			return
+		}
+
+		resJSON["page"] = page
+		resJSON["pageSize"] = pageSize
+		resJSON["total"] = 1
+		resJSON["data"] = data
+	} else if len(vars["group_id"]) != 0 {
+		// 精确查询组内user
+		groupIDStr = vars["group_id"][0]
+		groupID, _ := strconv.Atoi(groupIDStr)
+		if groupID == 0 {
+			respErrorMessage(w, codeGroupNotFound)
+			Error.Println("userGet fail:", codeGroupNotFound.String())
+			return
+		}
+		cnt, err := db.userCountByGroupID(groupID)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("userGet count fail:", codeSQLExecutionFailed.String())
+			return
+		}
+		data, err := db.userInfoMapListByGroupID(groupID, page, pageSize)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("userGet fail:", codeSQLExecutionFailed.String())
+			return
+		}
+
+		resJSON["page"] = page
+		resJSON["pageSize"] = pageSize
+		resJSON["total"] = cnt
+		resJSON["data"] = data
+	} else if len(vars["domain_id"]) != 0 {
+		// 精确查询域内user
+		domainIDStr = vars["domain_id"][0]
+		domainID, _ := strconv.Atoi(domainIDStr)
+		if domainID == 0 {
+			respErrorMessage(w, codeDomainNotFound)
+			Error.Println("userGet fail:", codeDomainNotFound.String())
+			return
+		}
+		cnt, err := db.userCountByDomainID(domainID)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("userGet count fail:", codeSQLExecutionFailed.String())
+			return
+		}
+		data, err := db.userInfoMapListByDomainID(domainID, page, pageSize)
+		if err != nil {
+			respErrorMessage(w, codeSQLExecutionFailed)
+			Error.Println("userGet fail:", codeSQLExecutionFailed.String())
+			return
+		}
+
+		resJSON["page"] = page
+		resJSON["pageSize"] = pageSize
+		resJSON["total"] = cnt
+		resJSON["data"] = data
+	} else {
+		// 无能为力
+	}
+
+	binData, err := json.Marshal(resJSON) //json化结果集
+
+	if err != nil {
+		respErrorMessage(w, codeServerInternalError)
+		Error.Println("userGet fail:", codeServerInternalError.String())
+	} else {
+		fmt.Fprintf(w, string(binData))
+	}
+	return
 }
 
 func userModify(w http.ResponseWriter, r *http.Request) {

@@ -1,13 +1,13 @@
 package main
 
 import (
+	"ams"
 	"fmt"
-	"hlr"
 	"time"
 )
 
 func main() {
-	q := hlr.QueueCreate()
+	q := ams.QueueCreate()
 
 	go func() {
 		for {

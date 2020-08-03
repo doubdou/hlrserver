@@ -1,17 +1,17 @@
 package main
 
 import (
+	"ams"
 	"fmt"
-	"hlr"
 
 	_ "github.com/lib/pq"
 )
 
 func main() {
-	hlr.LoadConfig()
-	dbConf := hlr.DatabaseConfigGet()
+	ams.LoadConfig()
+	dbConf := ams.DatabaseConfigGet()
 
-	dbConn, err := hlr.OpenDBConnector(dbConf.Host, dbConf.Port, dbConf.User, dbConf.Password, dbConf.Name)
+	dbConn, err := ams.OpenDBConnector(dbConf.Host, dbConf.Port, dbConf.User, dbConf.Password, dbConf.Name)
 	if err != nil {
 		fmt.Println("db connect", err)
 		return
@@ -19,11 +19,11 @@ func main() {
 
 	dbConn.CreateTable()
 
-	httpConf := hlr.HTTPConfigGet()
+	httpConf := ams.HTTPConfigGet()
 	httpAddr := fmt.Sprintf("0.0.0.0:%s", httpConf.Port)
 	if httpAddr == "" {
 		fmt.Println("http addr config not valid.")
 	}
-	srv := hlr.NewWebServer()
+	srv := ams.NewWebServer()
 	srv.Serve(httpAddr)
 }
