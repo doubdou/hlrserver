@@ -1,4 +1,4 @@
-package ams
+package hlr
 
 import (
 	"io"
@@ -16,7 +16,7 @@ var (
 
 //日志初始化
 func loggerInit() {
-	file, err := os.OpenFile("ams.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	file, err := os.OpenFile("hlr.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		log.Fatalln("Failed to open error log file:", err)
 	}

@@ -1,4 +1,4 @@
-package ams
+package hlr
 
 import (
 	"encoding/json"
@@ -21,14 +21,14 @@ type httpErrRespDesc struct {
 
 const (
 	codeSuccess reason = 0
-	/*********ams内部定义错误状态码****************************/
+	/*********hlr内部定义错误状态码****************************/
 	//http请求原因
 	codeBodyEmpty             reason = 101
 	codeLackOfParams          reason = 102
 	codeBadRequestForm        reason = 103
 	codeBadRequestMethod      reason = 104
 	codeBodyParsingFailed     reason = 105
-	codeMissingRequiredParams reason = 106
+	codeMissingRequiredParhlr reason = 106
 	codeRequestRefused        reason = 107
 	codeRequestIDInvalid      reason = 108
 
@@ -70,14 +70,14 @@ func (r reason) String() string {
 	case codeBodyEmpty:
 		return "http body data is empty"
 	case codeLackOfParams:
-		return "Lack of params"
+		return "Lack of parhlr"
 	case codeBadRequestForm:
 		return "Bad request form"
 	case codeBadRequestMethod:
 		return "Bad request method"
 	case codeBodyParsingFailed:
 		return "Body parsing failed"
-	case codeMissingRequiredParams:
+	case codeMissingRequiredParhlr:
 		return "Missing required parameter"
 	case codeRequestRefused:
 		return "The request is refused"

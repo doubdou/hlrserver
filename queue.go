@@ -1,4 +1,4 @@
-package ams
+package hlr
 
 import (
 	"sync"
