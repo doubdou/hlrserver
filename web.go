@@ -105,8 +105,8 @@ func domainGet(w http.ResponseWriter, r *http.Request) {
 	pageSize, _ := strconv.Atoi(pageSizeStr)
 	Debug.Printf("domainGet id:%d Name:%s page:%d pageSize:%d", id, name, page, pageSize)
 	if page == 0 || pageSize == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
-		Error.Println("domainGet fail:", codeMissingRequiredParhlr.String())
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("domainGet fail:", codeMissingRequiredParams.String())
 		return
 	}
 	db, err := GetDBConnector()
@@ -302,7 +302,7 @@ func domainAdd(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if req.Name == "" || req.TenantID == 0 || req.Enable == "" {
-		respErrorMessage(w, codeMissingRequiredParhlr)
+		respErrorMessage(w, codeMissingRequiredParams)
 		Error.Println("domainAdd fail: missing required parameter")
 		return
 	}
@@ -362,8 +362,8 @@ func groupGet(w http.ResponseWriter, r *http.Request) {
 
 	//domain_id 必填参数
 	if len(vars["domain_id"]) == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
-		Error.Println("groupGet fail:", codeMissingRequiredParhlr.String())
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("groupGet fail:", codeMissingRequiredParams.String())
 		return
 	}
 	if len(vars["domain_id"]) != 0 {
@@ -373,8 +373,8 @@ func groupGet(w http.ResponseWriter, r *http.Request) {
 		groupIDStr = vars["group_id"][0]
 	}
 	if len(vars["page"]) == 0 || len(vars["pageSize"]) == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
-		Error.Println("groupGet fail:", codeMissingRequiredParhlr.String())
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("groupGet fail:", codeMissingRequiredParams.String())
 		return
 	}
 	pageStr = vars["page"][0]
@@ -391,8 +391,8 @@ func groupGet(w http.ResponseWriter, r *http.Request) {
 	pageSize, _ := strconv.Atoi(pageSizeStr)
 	Debug.Printf("groupGet domain id:%d group id；%d page:%d pageSize:%d", domainID, groupID, page, pageSize)
 	if page == 0 || pageSize == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
-		Error.Println("groupGet fail:", codeMissingRequiredParhlr.String())
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("groupGet fail:", codeMissingRequiredParams.String())
 		return
 	}
 	db, err := GetDBConnector()
@@ -626,7 +626,7 @@ func groupAdd(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if req.Name == "" || req.DomainID == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
+		respErrorMessage(w, codeMissingRequiredParams)
 		Error.Println("groupAdd fail: missing required parameter")
 		return
 	}
@@ -695,13 +695,13 @@ func userGet(w http.ResponseWriter, r *http.Request) {
 
 	//domain_id 必填参数
 	if len(vars["user_id"]) == 0 && len(vars["group_id"]) == 0 && len(vars["domain_id"]) == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
-		Error.Println("userGet fail:", codeMissingRequiredParhlr.String())
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("userGet fail:", codeMissingRequiredParams.String())
 		return
 	}
 	if len(vars["page"]) == 0 || len(vars["pageSize"]) == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
-		Error.Println("userGet fail:", codeMissingRequiredParhlr.String())
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("userGet fail:", codeMissingRequiredParams.String())
 		return
 	}
 	pageStr = vars["page"][0]
@@ -710,8 +710,8 @@ func userGet(w http.ResponseWriter, r *http.Request) {
 	pageSize, _ := strconv.Atoi(pageSizeStr)
 
 	if page == 0 || pageSize == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
-		Error.Println("userGet fail:", codeMissingRequiredParhlr.String())
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("userGet fail:", codeMissingRequiredParams.String())
 		return
 	}
 
@@ -850,8 +850,8 @@ func userModify(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if req.Password == "" || req.GroupID == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
-		Error.Println("userModify fail:", codeMissingRequiredParhlr.String())
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("userModify fail:", codeMissingRequiredParams.String())
 		return
 	}
 	userInfo, err := db.ReadUser(userID)
@@ -1009,8 +1009,8 @@ func userAdd(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if req.Username == "" || req.Password == "" || req.GroupID == 0 {
-		respErrorMessage(w, codeMissingRequiredParhlr)
-		Error.Println("useradd fail", codeMissingRequiredParhlr.String())
+		respErrorMessage(w, codeMissingRequiredParams)
+		Error.Println("useradd fail", codeMissingRequiredParams.String())
 		return
 	}
 	Debug.Println("-----", req.Username, req.Password, req.GroupID)
@@ -1056,11 +1056,11 @@ func authInfoMarshal(domain string, groupID int, username string, password strin
 	<document type="freeswitch/xml">
 	<section name="directory">
 	<domain name="%s">
-	<parhlr>
+	<params>
 	<param name="dial-string" value="{^^:sip_invite_domain=%s:presence_id=%s@%s}${sofia_contact(*/%s@%s)},${verto_contact(%s@%s)}"/>
 	<param name="jsonrpc-allowed-methods" value="verto"/>
 	<param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/>
-	</parhlr>
+	</params>
 	<variables>
 	<variable name="record_stereo" value="true"/>
 	<variable name="default_gateway" value="%s"/>
@@ -1071,10 +1071,10 @@ func authInfoMarshal(domain string, groupID int, username string, password strin
 	<group name="g%d">
 	<users>
 	<user id="%s">
-	<parhlr>
+	<params>
 	<param name="password" value="%s"/>
 	<param name="vm-password" value="%s"/>
-	</parhlr>
+	</params>
 	<variables>
 	<variable name="toll_allow" value="domestic,international,local"/>
 	<variable name="accountcode" value="86"/>
@@ -1125,7 +1125,7 @@ func numberAuth(w http.ResponseWriter, r *http.Request) {
 	if eventNameArr[0] == "GENERAL" {
 		w.WriteHeader(200)
 		return
-	} else if eventNameArr[0] == "REQUEST_PARhlr" {
+	} else if eventNameArr[0] == "REQUEST_PARAMS" {
 		actionArr := r.PostForm["action"]
 		if len(actionArr) != 1 {
 			w.WriteHeader(200)
@@ -1214,7 +1214,7 @@ func agentStateHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if req.Realm == "" || req.Username == "" || req.State == "" {
-		respErrorMessage(w, codeMissingRequiredParhlr)
+		respErrorMessage(w, codeMissingRequiredParams)
 		Error.Println("agentState handle fail: missing required parameter")
 		return
 	}

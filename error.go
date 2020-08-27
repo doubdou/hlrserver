@@ -28,7 +28,7 @@ const (
 	codeBadRequestForm        reason = 103
 	codeBadRequestMethod      reason = 104
 	codeBodyParsingFailed     reason = 105
-	codeMissingRequiredParhlr reason = 106
+	codeMissingRequiredParams reason = 106
 	codeRequestRefused        reason = 107
 	codeRequestIDInvalid      reason = 108
 
@@ -77,7 +77,7 @@ func (r reason) String() string {
 		return "Bad request method"
 	case codeBodyParsingFailed:
 		return "Body parsing failed"
-	case codeMissingRequiredParhlr:
+	case codeMissingRequiredParams:
 		return "Missing required parameter"
 	case codeRequestRefused:
 		return "The request is refused"
